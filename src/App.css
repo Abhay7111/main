@@ -14,6 +14,9 @@
 .border-clr1{
   border-color: rgb(61, 61, 61);
 }
+.border-clr2{
+  border-color: rgb(88, 88, 88);
+}
 
 .calc-h-20{
   height: calc(100vh - 80px);
