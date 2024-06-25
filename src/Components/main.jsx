@@ -31,6 +31,7 @@ function Main() {
                          <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Support</a></li>
                          <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Blog</a></li>
                          <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Terms</a></li>
+                         <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Privacy</a></li>
                     </ul>
                     <p className='text-sm'>© 2024 <a href="https://www.gaama.top" className='hover:underline underline-offset-2'>gaama</a></p>
                </div>
