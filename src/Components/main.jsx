@@ -22,8 +22,18 @@ function Main() {
                {/* This is Nav */}
                <div className='w-full h-20 border-b border-clr1'></div>
                {/* This is main display */}
-               <div className='w-full overflow-hidden overflow-y-auto calc-h-20'>
+               <div className='w-full max-w-[1366px] overflow-hidden overflow-y-auto calc-h-20'>
                     <Site/>
+               <div className='footer w-full mt-10 px-5 py-3 border-t border-clr1 flex flex-col gap-y-3'>
+                    <ul className='flex items-center text-sm flex-wrap justify-start gap-1 font-medium'>
+                         <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Docs</a></li>
+                         <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Pricing</a></li>
+                         <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Support</a></li>
+                         <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Blog</a></li>
+                         <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Terms</a></li>
+                    </ul>
+                    <p className='text-sm'>© 2024 <a href="https://www.gaama.top" className='hover:underline underline-offset-2'>gaama</a></p>
+               </div>
                </div>
           </div>
     </div>
