@@ -9,11 +9,11 @@ function Main() {
      {/* This is left Nav */}
           <div className='w-20 h-full py-2 bg-zinc-900 border-r border-clr1 flex flex-col items-center justify-between'>
                <div className='w-fit max-h-[90vh] bg-green-400/0 flex flex-col items-center justify-start gap-2'>
-                    <div id='home' className='size-10 border border-clr2 mb-10 rounded-lg flex items-center justify-center'>MN</div>
-                    <div id='site' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'> <a href="/"><i class="ri-home-4-line"></i></a></div>
-                    <div id='price' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 bg-zinc-700 cursor-pointer transition-all'><a href="site"><i class="ri-pages-line"></i></a></div>
-                    <div id='contact' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><a href="#"><i class="ri-money-rupee-circle-line"></i></a></div>
-                    <div className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><a href="#"><i class="ri-contacts-line"></i></a></div>
+                    <a href="#"><div className='size-10 border border-clr2 mb-10 rounded-lg flex items-center justify-center'>MN</div></a>
+                    <a href="/"><div id='home' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-home-4-line"></i></div></a>
+                    <a href="site"><div id='site' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 bg-zinc-700 cursor-pointer transition-all'><i class="ri-pages-line"></i></div></a>
+                    <a href="Pricing"><div id='price' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-money-rupee-circle-line"></i> </div></a>
+                    <a href="Contact"><div id='contact' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-contacts-line"></i> </div></a>
                </div>
                <div className='w-fit max-h-[10vh]'>
                     <div className='size-10 border border-clr2 rounded-full overflow-hidden'></div>
