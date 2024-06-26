@@ -1,5 +1,7 @@
 import React from 'react'
 import Site from './Routs/Site'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './Routs/Home'
 
 function Main() {
   return (
@@ -7,11 +9,11 @@ function Main() {
      {/* This is left Nav */}
           <div className='w-20 h-full py-2 bg-zinc-900 border-r border-clr1 flex flex-col items-center justify-between'>
                <div className='w-fit max-h-[90vh] bg-green-400/0 flex flex-col items-center justify-start gap-2'>
-                    <div className='size-10 border border-clr2 mb-10 rounded-lg flex items-center justify-center'>MN</div>
-                    <div className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-home-4-line"></i></div>
-                    <div className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 bg-zinc-700 cursor-pointer transition-all'><i class="ri-pages-line"></i></div>
-                    <div className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-money-rupee-circle-line"></i></div>
-                    <div className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-contacts-line"></i></div>
+                    <div id='home' className='size-10 border border-clr2 mb-10 rounded-lg flex items-center justify-center'>MN</div>
+                    <div id='site' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><a href="/"><i class="ri-home-4-line"></i></a></div>
+                    <div id='price' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 bg-zinc-700 cursor-pointer transition-all'><a href="site"><i class="ri-pages-line"></i></a></div>
+                    <div id='contact' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><a href="#"><i class="ri-money-rupee-circle-line"></i></a></div>
+                    <div className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><a href="#"><i class="ri-contacts-line"></i></a></div>
                </div>
                <div className='w-fit max-h-[10vh]'>
                     <div className='size-10 border border-clr2 rounded-full overflow-hidden'></div>
@@ -23,7 +25,17 @@ function Main() {
                <div className='w-full h-20 border-b border-clr1'></div>
                {/* This is main display */}
                <div className='w-full max-w-[1366px] overflow-hidden overflow-y-auto calc-h-20'>
-                    <Site/>
+
+
+               <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Home/>} />
+          <Route path='/site' element={<Site/>}/>
+        </Routes>
+      </BrowserRouter>
+
+
+                    {/* Footer */}
                <div className='footer w-full mt-10 px-5 py-3 border-t border-clr1 flex flex-col gap-y-3'>
                     <ul className='flex items-center text-sm flex-wrap justify-start gap-1 font-medium'>
                          <li><a href="#" className='px-3 py-1 rounded-lg transition-all hover:bg-zinc-800'>Docs</a></li>
