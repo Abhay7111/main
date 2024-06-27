@@ -1,19 +1,51 @@
-import React from 'react'
-import Site from './Routs/Site'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import Home from './Routs/Home'
-import Routersmaking from './Routs/Routersmaking'
-import Contact from './Routs/Contact'
+import React, { useEffect } from 'react';
+import Site from './Routs/Site';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Home from './Routs/Home';
+import Contact from './Routs/Contact';
 
 function Main() {
+     useEffect(()=>{
+          const home = document.querySelector("#home");
+          const site = document.querySelector("#site");
+          const price = document.querySelector("#price");
+          const contact = document.querySelector("#contact");
+
+          home.addEventListener('click', ()=>{
+               home.style.backgroundColor = "#3f3f46"
+               site.style.backgroundColor = "transparent"
+               price.style.backgroundColor = "transparent"
+               contact.style.backgroundColor = "transparent"
+          })
+          site.addEventListener('click', ()=>{
+               site.style.backgroundColor = "#3f3f46"
+               home.style.backgroundColor = "transparent"
+               price.style.backgroundColor = "transparent"
+               contact.style.backgroundColor = "transparent"
+          })
+          price.addEventListener('click', ()=>{
+               price.style.backgroundColor = "#3f3f46"
+               site.style.backgroundColor = "transparent"
+               home.style.backgroundColor = "transparent"
+               contact.style.backgroundColor = "transparent"
+          })
+          contact.addEventListener('click', ()=>{
+               contact.style.backgroundColor = "#3f3f46"
+               price.style.backgroundColor = "transparent"
+               site.style.backgroundColor = "transparent"
+               home.style.backgroundColor = "transparent"
+          })
+
+     })
   return (
     <div className='w-full h-full bg-zinc-900 flex items-center justify-center'>
      {/* This is left Nav */}
           <div className='w-20 h-full py-2 bg-zinc-900 border-r border-clr1 flex flex-col items-center justify-between'>
                <div className='w-fit max-h-[90vh] bg-green-400/0 flex flex-col items-center justify-start gap-2'>
                     <a href="#"><div className='size-10 border border-clr2 mb-10 rounded-lg flex items-center justify-center'>MN</div></a>
-                    <a href="/"><div id='home' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-home-4-line"></i></div></a>
-                    <a href="site"><div id='site' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 bg-zinc-700 cursor-pointer transition-all'><i class="ri-pages-line"></i></div></a>
+                    <a href="/"><div id='home' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5  bg-zinc-700 cursor-pointer transition-all'><i class="ri-home-4-line"></i></div></a>
+                    <a href="site"><div id='site' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-pages-line"></i></div></a>
                     <a href="Pricing"><div id='price' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-money-rupee-circle-line"></i> </div></a>
                     <a href="Contact"><div id='contact' className='size-10 rounded-lg flex items-center justify-center text-xl hover:bg-zinc-50/5 cursor-pointer transition-all'><i class="ri-contacts-line"></i> </div></a>
                </div>
