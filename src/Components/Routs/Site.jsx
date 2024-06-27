@@ -1,6 +1,7 @@
 import React from 'react'
 import Sitecard from '../Cards/Sitecard'
 import Site_select from '../selections/site-select'
+import { Link } from 'react-router-dom'
 
 function Site() {
      const sites = [
@@ -108,7 +109,7 @@ function Site() {
                     <a className='py-2 w-full sm:w-fit text-center px-4 mt-3 sm:mt-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition-all border border-clr1 cursor-pointer'>Edit filters</a>
           </div>
           <div className='flex flex-col items-start sm:items-end justify-center'>
-               <div className='text-center w-full px-5 sm:w-32 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-sm font-medium hover:bg-blue-500 transition-all cursor-pointer'> Contact me </div>
+               <Link to='/dashboard/contact'><div className='text-center w-full px-5 sm:w-32 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-sm font-medium hover:bg-blue-500 transition-all cursor-pointer'> Contact me </div></Link>
                <ul className='flex sm:flex-row flex-col sm:w-fit w-full items-end sm:items-center justify-center gap-3 sm:gap-5 mt-3'>
                     <li className='py-1.5 px-3 w-full sm:w-fit'>
                          <form action="/site">
