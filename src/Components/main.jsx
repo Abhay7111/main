@@ -2,6 +2,8 @@ import React from 'react'
 import Site from './Routs/Site'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Home from './Routs/Home'
+import Routersmaking from './Routs/Routersmaking'
+import Contact from './Routs/Contact'
 
 function Main() {
   return (
@@ -29,6 +31,8 @@ function Main() {
                     <Routes>
                          <Route path='/' element={<Home/>} />
                          <Route path='/site' element={<Site/>}/>
+                         <Route path='/contact' element={<Contact/>}/>
+                         <Route path='*' element='404'/>
                     </Routes>
                </BrowserRouter>
                     {/* Footer */}

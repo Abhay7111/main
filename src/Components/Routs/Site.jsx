@@ -113,7 +113,7 @@ function Site() {
                     <li className='py-1.5 px-3 w-full sm:w-fit'>
                          <form action="/site">
                               <label htmlFor="site-select" className='text-sm font-medium mr-1'>Select sites :</label>
-                                   <select name="site-select" id="site-select" className='px-2 pr-1 w-32 py-1 rounded-lg bg-zinc-800 mr-2 outline-none text-sm cursor-pointer'>
+                                   <select name="name-site-select" id="id-site-select" className='px-2 pr-1 w-32 py-1 rounded-lg bg-zinc-800 mr-2 outline-none text-sm cursor-pointer'>
                                         <option value="main">main</option>
                                         {sites.map((items, index)=>(<Site_select sites={items}/>))}
                                    </select>
@@ -133,6 +133,7 @@ function Site() {
                <Sitecard sites={items}/>
           ))}
      </div>
+          
       </div>
      </div>
   )
