@@ -2,7 +2,7 @@ import React from 'react'
 
 function Site_select({sites}) {
   return (
-     <option value={sites.domain} className='site-option' >{sites.name}</option>
+     <option value={`${sites.domain}`} className='site-option' >{sites.name}</option>
   )
 }
 

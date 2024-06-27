@@ -6,7 +6,7 @@ function Site() {
      const sites = [
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://img.freepik.com/free-vector/landing-page-template-with-web-design-concept_23-2147867627.jpg?t=st=1719331638~exp=1719335238~hmac=6f264662dbe98f9a29d3c3c2ce0a44542847e1cba8d15854b0a2194210e6ca85&w=740',
@@ -16,7 +16,7 @@ function Site() {
           },
           {
                name:'Ledtvexpert.in',
-               domain:'ledtvexpert.in',
+               domain:'/dashboard/ledtvexpert.in',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/users/6047818/screenshots/17678900/media/c102bc8e88ea57a5945c2b7b96eb952a.png?resize=768x576&vertical=center',
@@ -26,7 +26,7 @@ function Site() {
           },
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/userupload/14535006/file/original-8ab1cc408feffbf310a53e9f8396b57a.jpg?resize=1022x767&vertical=center',
@@ -36,7 +36,7 @@ function Site() {
           },
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/userupload/5381347/file/original-4bb794f7a722d00caa85f6282ca88e62.png?resize=1200x900',
@@ -46,7 +46,7 @@ function Site() {
           },
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/userupload/12396630/file/original-134e12dfd9c3c1702baa4ed2848e26b9.gif',
@@ -56,7 +56,7 @@ function Site() {
           },
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/users/8953545/screenshots/18563309/media/56643ab68608be6d418c535bbb833f55.png?resize=768x576&vertical=center',
@@ -66,7 +66,7 @@ function Site() {
           },
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/userupload/13820606/file/original-4f2f01468766d4e0962d2f0a08120af7.png?resize=1022x767&vertical=center',
@@ -76,7 +76,7 @@ function Site() {
           },
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/userupload/13820604/file/original-1d8294745f78595e58ed565ba7746e12.png?resize=1022x559&vertical=center',
@@ -86,7 +86,7 @@ function Site() {
           },
           {
                name:'Gaama.top',
-               domain:'gaama.top',
+               domain:'/dashboard/gaama.top',
                owned:'gaama.top',
                ownedurl:'',
                image:'https://cdn.dribbble.com/userupload/3276275/file/original-c4dabc2e801a04fbddb408f5bf048c0f.png?resize=1200x900',
