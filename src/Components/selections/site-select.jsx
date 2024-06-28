@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Site_select({sites}) {
   return (
-     <option value={`${sites.domain}`} className='site-option' >{sites.name}</option>
+     <Link to={`${sites.domain}`}>{sites.name}</Link>
   )
 }
 

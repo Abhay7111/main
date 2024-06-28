@@ -39,6 +39,7 @@ function Main() {
           })
 
      })
+     
   return (
     <div className='w-full h-full bg-zinc-900 flex items-center justify-center'>
      {/* This is left Nav */}
@@ -62,10 +63,10 @@ function Main() {
                <div className='w-full max-w-[1366px] overflow-hidden overflow-y-auto calc-h-20'>
                     <Routes>
                          <Route path='/' element={<Home/>} />
-                         <Route path='site' element={<Site/>}/>
+                         <Route path='/site' element={<Site/>}/>
                          <Route path='contact' element={<Contact/>}/>
                          <Route path='pricing' element={<Pricing/>}/>
-                         <Route path='*' element='404'/>
+                         <Route path='/dashboard/*' element='404'/>
                     </Routes>
                     {/* Footer */}
                <div className='footer w-full mt-10 px-5 py-3 border-t border-clr1 flex flex-col gap-y-3'>
