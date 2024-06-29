@@ -21,3 +21,42 @@
 .calc-h-20{
   height: calc(100vh - 80px);
 }
+
+.imgsrotate{
+  animation: rotatesscollanimation;
+  animation-timeline: view();
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  position: relative;
+}
+
+@keyframes rotatesscollanimation {
+  0%{
+    scale: 0.5;
+  }
+  30%{
+    scale: 1;
+  }
+  100%{
+    scale: 1;
+  }
+}
+.imgsrotate50{
+  animation: rotatesscollanimation50;
+  animation-timeline: view();
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  position: relative;
+}
+
+@keyframes rotatesscollanimation50 {
+  0%{
+    scale: 0.2;
+  }
+  70%{
+    scale: 1;
+  }
+  100%{
+    scale: 0.5;
+  }
+}

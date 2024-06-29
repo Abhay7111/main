@@ -2,7 +2,7 @@ import React from 'react'
 
 function Sitecard({sites}) {
   return (
-    <a href={sites.url} target='_blank' className=' rounded-lg hover:scale-[1.02] transition-all hover:shadow-lg hover:shadow-zinc-800'>
+    <a href={sites.url} target='_blank' className='imgsrotate rounded-lg hover:scale-[1.02] transition-all hover:shadow-lg hover:shadow-zinc-800'>
       <div className='w-full sm:w-[300px] bg-zinc-800 hover:bg-zinc-900 rounded-lg gap-3 flex flex-col items-start justify-start px-2 pt-2 pb-4 '>
         <div className='w-full h-auto rounded-lg'>
           <img src={sites.image} className='w-full sm:h-[250px] sm:object-cover rounded-lg border border-clr2'/>

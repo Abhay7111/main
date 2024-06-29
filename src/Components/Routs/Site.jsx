@@ -10,7 +10,7 @@ function Site() {
           const site_select = document.querySelector("#site-select")
 
           site_select.addEventListener("click", ()=>{
-               weblinks.style.height = "0px"
+               weblinks.style.height = "auto"
                weblinks.style.padding = "0px"
                weblinks.style.border = "0px"
                weblinks.style.border = "0px"
@@ -108,6 +108,56 @@ function Site() {
                platform:'Netlify',
                platformurl:''
           },
+          {
+               name:'Gaama.top',
+               domain:'/dashboard/site/gaama',
+               owned:'gaama.top',
+               ownedurl:'',
+               image:'https://cdn.dribbble.com/userupload/12396630/file/original-134e12dfd9c3c1702baa4ed2848e26b9.gif',
+               url:'https://www.gaama.top/',
+               platform:'Netlify',
+               platformurl:''
+          },
+          {
+               name:'Gaama.top',
+               domain:'/dashboard/site/gaama',
+               owned:'gaama.top',
+               ownedurl:'',
+               image:'https://cdn.dribbble.com/users/8953545/screenshots/18563309/media/56643ab68608be6d418c535bbb833f55.png?resize=768x576&vertical=center',
+               url:'https://www.gaama.top/',
+               platform:'Netlify',
+               platformurl:''
+          },
+          {
+               name:'Gaama.top',
+               domain:'/dashboard/site/gaama',
+               owned:'gaama.top',
+               ownedurl:'',
+               image:'https://cdn.dribbble.com/userupload/13820606/file/original-4f2f01468766d4e0962d2f0a08120af7.png?resize=1022x767&vertical=center',
+               url:'https://www.gaama.top/',
+               platform:'Netlify',
+               platformurl:''
+          },
+          {
+               name:'Gaama.top',
+               domain:'/dashboard/site/gaama',
+               owned:'gaama.top',
+               ownedurl:'',
+               image:'https://cdn.dribbble.com/userupload/13820604/file/original-1d8294745f78595e58ed565ba7746e12.png?resize=1022x559&vertical=center',
+               url:'https://www.gaama.top/',
+               platform:'Netlify',
+               platformurl:''
+          },
+          {
+               name:'Gaama.top',
+               domain:'/dashboard/site/gaama',
+               owned:'gaama.top',
+               ownedurl:'',
+               image:'https://cdn.dribbble.com/userupload/3276275/file/original-c4dabc2e801a04fbddb408f5bf048c0f.png?resize=1200x900',
+               url:'https://www.gaama.top/',
+               platform:'Netlify',
+               platformurl:''
+          },
      ]
   return (
      <div className='w-full min-h-[100vh] h-auto bg-green-400/0  px-5'>
@@ -126,9 +176,9 @@ function Site() {
                <ul className='flex sm:flex-row flex-col sm:w-fit w-full items-end sm:items-center justify-center gap-3 sm:gap-5 mt-3'>
                     <li className='py-1.5 px-3 w-full sm:w-fit'>
                          <form action="" className='relative'>
-                              <label id='site-select' className='text-sm font-medium mr-1 relative'>Select sites :</label>
-                              <div className=' weblinks min-w-60 overflow-hidden transition-all bg-zinc-900/80 border border-clr1 backdrop-blur-md absolute right-0 z-50 rounded-lg mt-2 p-2'>
-                                   <div className='flex flex-col gap-1 text-sm'>
+                              <label id='site-select' className='text-sm font-medium mr-1 relative cursor-pointer'>Select sites :</label>
+                              <div className=' weblinks min-w-60 h-0 max-h-60 overflow-y-auto overflow-hidden transition-all bg-zinc-900/80 border border-clr1 backdrop-blur-md absolute right-0 z-50 rounded-lg mt-2 p-0'>
+                                   <div className='flex flex-col gap-1 text-sm p-2'>
                                         {sites.map((items, index)=>(<Site_select sites={items}/>))}
                                    </div>
                               </div>          
