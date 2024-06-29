@@ -178,9 +178,9 @@ function Site() {
                          <form action="" className='relative'>
                               <label id='site-select' className='text-sm font-medium mr-1 relative cursor-pointer'>Select sites :</label>
                               <div className=' weblinks min-w-60 h-0 max-h-60 overflow-y-auto overflow-hidden transition-all bg-zinc-900/80 border border-clr1 backdrop-blur-md absolute right-0 z-50 rounded-lg mt-2 p-0'>
-                                   <div className='flex flex-col gap-1 text-sm p-2'>
-                                        {sites.map((items, index)=>(<Site_select sites={items}/>))}
-                                   </div>
+                                   <details>
+                                   {sites.map((items, index)=>(<Site_select sites={items}/>))}
+                                   </details>
                               </div>          
                          </form>
                     </li>
