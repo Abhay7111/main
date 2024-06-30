@@ -175,10 +175,9 @@ function Site() {
                <Link to='/dashboard/contact'><div className='text-center w-full px-5 sm:w-32 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-sm font-medium hover:bg-blue-500 transition-all cursor-pointer'> Contact me </div></Link>
                <ul className='flex sm:flex-row flex-col sm:w-fit w-full items-end sm:items-center justify-center gap-3 sm:gap-5 mt-3'>
                     <li className='py-1.5 px-3 w-full sm:w-fit'>
-                         <form action="" className='relative'>
-                              <label id='site-select' className='text-sm font-medium mr-1 relative cursor-pointer'>Select sites :</label>
+                         <form action="" className='relative'><label id='site-select' className='text-sm font-medium mr-1 relative cursor-pointer'>Select sites :</label>
                               <div className=' weblinks min-w-60 h-0 max-h-60 overflow-y-auto overflow-hidden transition-all bg-zinc-900/80 border border-clr1 backdrop-blur-md absolute right-0 z-50 rounded-lg mt-2 p-0'>
-                                   <details>
+                                   <details className='flex flex-col'>
                                    {sites.map((items, index)=>(<Site_select sites={items}/>))}
                                    </details>
                               </div>          

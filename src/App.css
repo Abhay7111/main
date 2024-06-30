@@ -24,7 +24,7 @@
 
 .imgsrotate{
   animation: rotatesscollanimation;
-  animation-timeline: view(50% 0);
+  animation-timeline: view(80% 0);
   position: relative;
 }
 
