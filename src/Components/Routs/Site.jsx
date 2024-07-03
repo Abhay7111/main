@@ -1,21 +1,11 @@
 import React, { useEffect } from 'react'
 import Sitecard from '../Cards/Sitecard'
 import Site_select from '../selections/site-select'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Router, Routes } from 'react-router-dom'
 import Home from './Home'
+import Contact from './Contact'
 
 function Site() {
-     useEffect(()=>{
-          const weblinks = document.querySelector(".weblinks")
-          const site_select = document.querySelector("#site-select")
-
-          site_select.addEventListener("click", ()=>{
-               weblinks.style.height = "auto"
-               weblinks.style.padding = "0px"
-               weblinks.style.border = "0px"
-               weblinks.style.border = "0px"
-          })
-     })
 
      const sites = [
           {
@@ -174,15 +164,6 @@ function Site() {
           <div className='flex flex-col items-start sm:items-end justify-center'>
                <Link to='/dashboard/contact'><div className='text-center w-full px-5 sm:w-32 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-sm font-medium hover:bg-blue-500 transition-all cursor-pointer'> Contact me </div></Link>
                <ul className='flex sm:flex-row flex-col sm:w-fit w-full items-end sm:items-center justify-center gap-3 sm:gap-5 mt-3'>
-                    <li className='py-1.5 px-3 w-full sm:w-fit'>
-                         <form action="" className='relative'><label id='site-select' className='text-sm font-medium mr-1 relative cursor-pointer'>Select sites :</label>
-                              <div className=' weblinks min-w-60 h-0 max-h-60 overflow-y-auto overflow-hidden transition-all bg-zinc-900/80 border border-clr1 backdrop-blur-md absolute right-0 z-50 rounded-lg mt-2 p-0'>
-                                   <details className='flex flex-col'>
-                                   {sites.map((items, index)=>(<Site_select sites={items}/>))}
-                                   </details>
-                              </div>          
-                         </form>
-                    </li>
                     <li className='flex gap-1'>
                          <span className='size-10 rounded-lg flex items-center opacity-40 bg-zinc-800 hover:bg-zinc-700 justify-center text-2xl font-extralight cursor-pointer'><i class="ri-menu-5-line"></i></span>
                          <span className='size-10 border border-clr2 bg-zinc-800 hover:bg-zinc-700 rounded-lg flex items-center justify-center text-2xl font-extralight cursor-pointer'><i class="ri-function-fill"></i></span>
@@ -197,8 +178,7 @@ function Site() {
                <Route path='/' element={<Sitecard sites={items}/>}/>
           </Routes>
           ))}
-     </div>
-          
+     </div>    
       </div>
      </div>
   )

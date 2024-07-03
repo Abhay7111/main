@@ -8,6 +8,7 @@ import Site from './Components/Routs/Site'
 import Contact from './Components/Routs/Contact'
 import Pricing from './Components/Routs/Pricing'
 import Home from './Components/Home/Home'
+import Works from './Components/Routs/works'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,7 +19,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/dashboard' element={<Main/>}>
-            <Route path='site' element={<Site/>}/>
+            <Route path='site' element={<Site/>}>
+              <Route path='*' element='error site'/>
+            </Route>
             <Route path='contact' element={<Contact/>}/>
             <Route path='pricing' element={<Pricing/>}/>
           </Route>
