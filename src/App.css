@@ -3,7 +3,7 @@
   max-height: 100vh;
   margin: 0 0;
   overflow: hidden;
-  color: #f0f0f0;
+  color: #313131;
   background-color: #27272A;
 }
 
@@ -18,8 +18,8 @@
   border-color: rgb(88, 88, 88);
 }
 
-.calc-h-20{
-  height: calc(100vh - 80px);
+.calc-h{
+  height: calc(100vh - 56px);
 }
 
 .imgsrotate{

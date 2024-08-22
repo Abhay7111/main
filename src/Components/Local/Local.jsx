@@ -1,9 +1,11 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import MaiNnav from '../Nav/MainNav';
 
 function Local() {
   return (
-    <div className='bg-zinc-100 w-full'>Local Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, temporibus?
+    <div className='bg-zinc-100 w-full'>
+      <MaiNnav/>
     <Outlet/>
     </div>
   )

@@ -8,6 +8,7 @@ function Inputs() {
      const [about, setAbout] = useState('');
      const [price, setPrice] = useState('');
      const [services, setServices] = useState('');
+     const [name, setName] = useState('');
      const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -20,6 +21,7 @@ function Inputs() {
       about: about,
       price: price,
       services: services,
+      name: name,
     };
 
     axios.post('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', blogData)
@@ -32,6 +34,7 @@ function Inputs() {
         setContact('');
         setPrice('');
         setServices('');
+        setName('');
       })
       .catch(error => {
         console.error('There was an error posting the blog!', error);
@@ -41,6 +44,10 @@ function Inputs() {
   return (
     <div className='w-full'>
      <form action="" method="post" onSubmit={handleSubmit} className='p-3 flex flex-col items-start justify-start gap-5  w-96 sm:w-[600px] m-3 rounded-xl'>
+          <div className='bg-zinc-200 p-5 rounded-lg flex flex-col gap-2 w-full'>
+               <label htmlFor="name" className='cursor-pointer font-semibold'>User name</label>
+               <input  className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm' type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='Username' />
+          </div>
           <div className='bg-zinc-200 p-5 rounded-lg flex flex-col gap-2 w-full'>
                <label htmlFor="logo" className='cursor-pointer font-semibold'>Logo</label>
                <input  className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm' type="text" id='logo' value={logo} onChange={(e) => setLogo(e.target.value)} placeholder='Logo URL' />
