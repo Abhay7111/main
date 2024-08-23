@@ -9,6 +9,7 @@ function Inputs() {
      const [price, setPrice] = useState('');
      const [services, setServices] = useState('');
      const [name, setName] = useState('');
+     const [domain, setDomain] = useState('');
      const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -22,6 +23,7 @@ function Inputs() {
       price: price,
       services: services,
       name: name,
+      domain: domain,
     };
 
     axios.post('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', blogData)
@@ -35,6 +37,7 @@ function Inputs() {
         setPrice('');
         setServices('');
         setName('');
+        setDomain('');
       })
       .catch(error => {
         console.error('There was an error posting', error);
@@ -47,6 +50,10 @@ function Inputs() {
           <div className='bg-zinc-200 p-5 rounded-lg flex flex-col gap-2 w-full'>
                <label htmlFor="name" className='cursor-pointer font-semibold'>User name</label>
                <input  className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm' type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='Username' />
+          </div>
+          <div className='bg-zinc-200 p-5 rounded-lg flex flex-col gap-2 w-full'>
+               <label htmlFor="domain" className='cursor-pointer font-semibold'>User domain</label>
+               <input  className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm' type="text" id='domain' value={domain} onChange={(e) => setDomain(e.target.value)} placeholder='Domain' />
           </div>
           <div className='bg-zinc-200 p-5 rounded-lg flex flex-col gap-2 w-full'>
                <label htmlFor="logo" className='cursor-pointer font-semibold'>Logo</label>
