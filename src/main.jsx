@@ -7,20 +7,27 @@ import Local from './Components/Local/Local.jsx'
 import Inputs from './Components/Inputs/Inputs.jsx'
 import Home from './Components/Main/Home.jsx'
 import Vnav from './Components/Nav/Vnav.jsx'
+import Testingform from './Components/Testing/Testingform.jsx'
 
 
 const routes = createBrowserRouter([
   {path:'/', element:<Local/>,
     children:[
-      {path:'', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
-      {path:'about', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
-      {path:'price', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
-      {path:'services', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
-      {path:'contact', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
+      {path:'', element:<Home/>,
+        children:[
+          {path:'', element:<Testingform/>,},
+          {path:'form', element:<Inputs/>,},
+        ]
+      },
+      {path:'about', element:<Home/>,},
+      {path:'price', element:<Home/>,},
+      {path:'services', element:<Home/>,},
+      {path:'contact', element:<Home/>,},
+      {path:'form', element:<Inputs/>,},
       {path:'getnav0132134542',
         children:[
-          {path:'', element:<Home/>,children:[{path:'', element:<Vnav/>,}]},
-          {path:':id', element:<Home/>,children:[{path:'', element:<Vnav/>,}]}
+          {path:'', element:<Home/>,},
+          {path:':id', element:<Home/>,}
         ]
       },
     ]

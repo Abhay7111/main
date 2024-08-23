@@ -10,11 +10,11 @@ function Nav() {
      </div>
      <div>
        <ul className='flex gap-3 items-center text-sm font-medium'>
-         <li><a href="#">Home</a></li>
-         <li><a href="#">About</a></li>
-         <li><a href="#">Services</a></li>
-         <li><a href="#">Contact</a></li>
-         <li><a href="#">Price</a></li>
+         <li><NavLink to="/">Home</NavLink></li>
+         <li><NavLink to="/About">About</NavLink></li>
+         <li><NavLink to="/Services">Services</NavLink></li>
+         <li><NavLink to="/Contact">Contact</NavLink></li>
+         <li><NavLink to="/Price">Price</NavLink></li>
          <li><NavLink to="form">Form</NavLink></li>
        </ul>
      </div>
