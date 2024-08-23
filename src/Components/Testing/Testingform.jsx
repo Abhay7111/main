@@ -57,7 +57,7 @@ function Testingform() {
 
     const handleUpdate = (id) => {
         // Update an existing navigation item
-        axios.put(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/updatenav0132134542/${id}`, formData)
+        axios.put(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`, formData)
             .then(response => {
                 setNavItems(navItems.map(item => item._id === id ? response.data : item));
                 setFormData({
@@ -82,7 +82,7 @@ function Testingform() {
 
         if (confirmDelete) {
             // Delete a navigation item
-            axios.delete(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/deletenav0132134542/${id}`)
+            axios.delete(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`)
                 .then(() => {
                     setNavItems(navItems.filter(item => item._id !== id));
                     alert('Navigation item deleted successfully!');
