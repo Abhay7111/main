@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Testingform() {
     const [navItems, setNavItems] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
+        domain: '',
         logo: '',
         home: '',
         about: '',
         price: '',
         services: '',
-        contact: ''
+        contact: '',
     });
     const [loading, setLoading] = useState(true);
     const [editingId, setEditingId] = useState(null);
@@ -42,12 +43,13 @@ function Testingform() {
                 setNavItems([...navItems, response.data]);
                 setFormData({
                     name: '',
+                    domain: '',
                     logo: '',
                     home: '',
                     about: '',
                     price: '',
                     services: '',
-                    contact: ''
+                    contact: '',
                 });
             })
             .catch(err => {
@@ -62,12 +64,13 @@ function Testingform() {
                 setNavItems(navItems.map(item => item._id === id ? response.data : item));
                 setFormData({
                     name: '',
+                    domain: '',
                     logo: '',
                     home: '',
                     about: '',
                     price: '',
                     services: '',
-                    contact: ''
+                    contact: '',
                 });
                 setEditingId(null);
             })
@@ -104,7 +107,8 @@ function Testingform() {
             about: item.about,
             price: item.price,
             services: item.services,
-            contact: item.contact
+            contact: item.contact,
+            domain: item.domain,
         });
         setEditingId(item._id);
     };
