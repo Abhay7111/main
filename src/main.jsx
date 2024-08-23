@@ -12,7 +12,11 @@ import Vnav from './Components/Nav/Vnav.jsx'
 const routes = createBrowserRouter([
   {path:'/', element:<Local/>,
     children:[
-      {path:'', element:<Home/>, children:[{path:'', element:<Vnav/>,}]},
+      {path:'', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
+      {path:'about', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
+      {path:'price', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
+      {path:'services', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
+      {path:'contact', element:<Home/>, children:[{path:'', element:<Vnav/>,},]},
       {path:'getnav0132134542',
         children:[
           {path:'', element:<Home/>,children:[{path:'', element:<Vnav/>,}]},

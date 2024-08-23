@@ -1,11 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import MaiNnav from '../Nav/MainNav';
+import Nav from '../Nav/Nav';
 
 function Local() {
   return (
-    <div className='bg-zinc-100 w-full'>
-      <MaiNnav/>
+    <div className='bg-zinc-100 w-full h-fit'>
+      <Nav/>
     <Outlet/>
     </div>
   )
