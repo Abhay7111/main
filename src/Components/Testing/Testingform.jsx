@@ -88,10 +88,10 @@ function Testingform() {
 
     return (
         <div>
-            <ul className='py-5 w-full sm:w-[55vw]'>
+            <ul className='p-2 bg-zinc-50 w-full sm:w-fit sm:max-[40vw] max-h-[350px] overflow-y-auto my-5 rounded-lg'>
                 {navItems.map(item => (
-                    <li key={item._id} className='flex items-center justify-between gap-5 mt-3 min-w-[50vw]'>
-                        <strong className='text-zinc-300 font-medium px-2'>{item.name} :</strong>
+                    <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full'>
+                        <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1'>{item.name} :</strong>
                         <div className='flex items-center gap-2'>
                         <button onClick={() => startEditing(item)} className='px-5 py-1.5 rounded-md bg-blue-400 hover:bg-blue-500 transition-all text-sm font-medium'>Edit</button>
                         <button onClick={() => handleDelete(item._id)} className='px-4 py-1.5 rounded-md bg-red-400 hover:bg-red-500 transition-all text-sm font-medium'>Delete</button>

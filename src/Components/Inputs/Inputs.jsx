@@ -26,7 +26,7 @@ function Inputs() {
 
     axios.post('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', blogData)
       .then(response => {
-        setMessage('Blog posted successfully!');
+        setMessage('posted successfully!');
         // Clear the form
         setLogo('');
         setHome('');
@@ -37,8 +37,8 @@ function Inputs() {
         setName('');
       })
       .catch(error => {
-        console.error('There was an error posting the blog!', error);
-        setMessage('Error posting the blog. Please try again.');
+        console.error('There was an error posting', error);
+        setMessage('Error posting. Please try again.');
       });
   };
   return (
