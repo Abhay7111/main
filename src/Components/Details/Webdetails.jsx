@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function BlogDetail() {
@@ -28,19 +28,19 @@ function BlogDetail() {
   }
 
   return (
-    <div className='w-fit max-h-[87vh] border border-zinc-700 m-3'>
-      <div className='flex sm:flex-row flex-col p-2 items-start gap-5 justify-start'>
-          <div className='relative w-96 max-h-screen'>
-            <a href={`https://${blog.domain}`}><img src={blog.logo} alt={`${blog.title} not uploaded an Image`} className='w-96 max-h-[83vh] hover:scale-[1.03] sm:hover:scale-[1.01] transition-cubic cursor-pointer sm:h-auto object-cover object-center' /></a>
+    <div className='w-full h-fit border border-zinc-700 rounded-md'>
+      <div className='flex sm:flex-col flex-col p-3 items-center gap-5 justify-start'>
+          <div className='relative w-full'>
+            <a href={`https://${blog.domain}`}><img src={blog.logo} alt={`${blog.title} not uploaded an Image`} className='w-full max-h-[49vh] bg-zinc-800 rounded-md hover:scale-[1.03] sm:hover:scale-[1.01] transition-cubic cursor-pointer sm:h-auto object-cover object-center' /></a>
           </div>
-          <div className='min-w-96 text-zinc-100 flex flex-col gap-1'>
-               <h1 className='text-2xl uppercase pb-3'>{blog.name}</h1>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>domain: <a href={`https://${blog.domain}`} target='_blank' className='font-light break-words text-wrap '>{blog.domain}</a></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>home: <p className='font-light break-words text-wrap '>{blog.home}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>contact: <p className='font-light break-words text-wrap '>{blog.contact}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>about: <p className='font-light break-words text-wrap '>{blog.about}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>price: <p className='font-light break-words text-wrap '>{blog.price}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>services: <p className='font-light break-words text-wrap '>{blog.services}</p></p>
+          <div className='w-full overflow-hidden overflow-y-auto text-zinc-100 flex flex-col gap-1'>
+               <NavLink target='_block' to={`https://${blog.domain}`} className='text-2xl uppercase pb-3 font-medium'>{blog.name}</NavLink>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>domain : <a href={`https://${blog.domain}`} target='_blank' className='font-light break-words text-wrap '>{blog.domain}</a></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>home : <p className='font-light break-words text-wrap '>{blog.home}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>contact : <p className='font-light break-words text-wrap '>{blog.contact}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>about : <p className='font-light break-words text-wrap '>{blog.about}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>price : <p className='font-light break-words text-wrap '>{blog.price}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>services : <p className='font-light break-words text-wrap '>{blog.services}</p></p>
                <p className='text-sm flex flex-nowrap break-words text-wrap font-medium gap-3'>logo: <a href={blog.logo} target='_blank' className='font-light break-words text-wrap '>{blog.logo}</a></p>
           </div>
         </div>

@@ -16,7 +16,7 @@ const routes = createBrowserRouter([
     children:[
       {path:'', element:<Home/>,
         children:[
-          {path:'', element:<Testingform/>,},
+          {path:'', element:'<Testingform/>',},
           {path:'form', element:<Inputs/>,},
           {path:':id', element:<Webdetails/>,},
         ]
@@ -29,11 +29,7 @@ const routes = createBrowserRouter([
       {path:'getnav0132134542',
         children:[
           {path:'', element:<Home/>,},
-          {path:':id', element:<Home/>,
-            children:[
-              {path:'', element:<Webdetails/>}
-            ]
-          }
+          {path:':id', element:<Webdetails/>,}
         ]
       },
     ]
