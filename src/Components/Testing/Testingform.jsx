@@ -145,6 +145,18 @@ function Testingform() {
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
+                    <label htmlFor="domain" className='cursor-pointer font-semibold'>User domain</label>
+                    <input
+                        className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
+                        type="text"
+                        id='domain'
+                        name='domain'
+                        value={formData.domain}
+                        onChange={handleInputChange}
+                        placeholder='domain'
+                    />
+                </div>
+                <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="logo" className='cursor-pointer font-semibold'>Logo</label>
                     <input
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
