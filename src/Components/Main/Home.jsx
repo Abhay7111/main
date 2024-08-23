@@ -17,7 +17,7 @@ function Home() {
           <Testingform/>
           </div>
           <div className='relative w-[30vw] px-3 h-screen overflow-y-auto calc-h border-l border-zinc-500'>
-          <div className='w-full mt-5 rounded-lg p-1 text-zinc-300 min-h-96 bg-zinc-800'>
+          <div className='w-full mt-5 rounded-lg p-1 text-zinc-300 min-h-30 bg-zinc-800'>
           <Webdetails/>
           </div>
           </div>

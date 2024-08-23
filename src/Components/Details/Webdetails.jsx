@@ -3,7 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function BlogDetail() {
-  const {id } = useParams(); // Get the blog_ID from the route
+  const {id } = useParams(); // Get the data_ID from the route
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -35,12 +35,12 @@ function BlogDetail() {
           </div>
           <div className='w-full overflow-hidden overflow-y-auto text-zinc-100 flex flex-col gap-1'>
                <NavLink target='_block' to={`https://${blog.domain}`} className='text-2xl uppercase pb-3 font-medium'>{blog.name}</NavLink>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>domain : <a href={`https://${blog.domain}`} target='_blank' className='font-light break-words text-wrap '>{blog.domain}</a></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>home : <p className='font-light break-words text-wrap '>{blog.home}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>contact : <p className='font-light break-words text-wrap '>{blog.contact}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>about : <p className='font-light break-words text-wrap '>{blog.about}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>price : <p className='font-light break-words text-wrap '>{blog.price}</p></p>
-               <p className='text-sm flex flex-nowrap font-medium gap-3'>services : <p className='font-light break-words text-wrap '>{blog.services}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>domain: <a href={`https://${blog.domain}`} target='_blank' className='font-light break-words text-wrap '>{blog.domain}</a></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>home: <p className='font-light break-words text-wrap '>{blog.home}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>contact: <p className='font-light break-words text-wrap '>{blog.contact}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>about: <p className='font-light break-words text-wrap '>{blog.about}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>price: <p className='font-light break-words text-wrap '>{blog.price}</p></p>
+               <p className='text-sm flex flex-nowrap font-medium gap-3'>services: <p className='font-light break-words text-wrap '>{blog.services}</p></p>
                <p className='text-sm flex flex-nowrap break-words text-wrap font-medium gap-3'>logo: <a href={blog.logo} target='_blank' className='font-light break-words text-wrap '>{blog.logo}</a></p>
           </div>
         </div>

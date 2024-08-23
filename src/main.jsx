@@ -1,14 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Local from './Components/Local/Local.jsx'
-import Inputs from './Components/Inputs/Inputs.jsx'
-import Home from './Components/Main/Home.jsx'
-import Vnav from './Components/Nav/Vnav.jsx'
-import Webdetails from './Components/Details/Webdetails.jsx'
-import Testingform from './Components/Testing/Testingform.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Local from './Components/Local/Local.jsx';
+import Inputs from './Components/Inputs/Inputs.jsx';
+import Home from './Components/Main/Home.jsx';
+import Vnav from './Components/Nav/Vnav.jsx';
+import Webdetails from './Components/Details/Webdetails.jsx';
+import Testingform from './Components/Testing/Testingform.jsx';
+import Clintprofiles from './Components/Clint profiles/Clintprofiles.jsx';
 
 
 const routes = createBrowserRouter([
@@ -16,9 +17,10 @@ const routes = createBrowserRouter([
     children:[
       {path:'', element:<Home/>,
         children:[
-          {path:'', element:'<Testingform/>',},
+          {path:'', element:<Home/>},
           {path:'form', element:<Inputs/>,},
           {path:':id', element:<Webdetails/>,},
+          {path:'*', element:<Home/>,},
         ]
       },
       {path:'about', element:<Home/>,},
@@ -29,9 +31,16 @@ const routes = createBrowserRouter([
       {path:'getnav0132134542',
         children:[
           {path:'', element:<Home/>,},
-          {path:':id', element:<Webdetails/>,}
+          {path:':id', element:<Home/>,},
+          {path:'*', element:<Home/>,},
         ]
       },
+    ]
+  },
+  {
+    path:'profile/:id', element:<Local/>,
+    children:[
+      {path:'', element:<Clintprofiles/>,}
     ]
   },
 ])
