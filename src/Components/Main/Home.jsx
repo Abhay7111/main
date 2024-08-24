@@ -8,7 +8,7 @@ import Webdetails from '../Details/Webdetails.jsx'
 
 function Home() {
   return (
-     <div className='flex calc-h bg-zinc-900'>
+     <div className='flex sm:flex-row flex-col calc-h bg-zinc-900'>
           <div className='min-w-20 flex flex-col items-center justify-start'>
           <Vnav/>
           </div>
