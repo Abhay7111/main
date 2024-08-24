@@ -31,7 +31,7 @@ function BlogDetail() {
     <div className='w-full h-fit border border-zinc-700 rounded-md'>
       <div className='flex sm:flex-col flex-col p-3 items-center gap-5 justify-start'>
           <div className='relative w-full'>
-            <a href={`https://${blog.domain}`}><img src={blog.logo} alt={`${blog.title} not uploaded an Image`} className='w-full max-h-[49vh] bg-zinc-800 rounded-md hover:scale-[1.03] sm:hover:scale-[1.01] transition-cubic cursor-pointer sm:h-auto object-cover object-center' /></a>
+            <NavLink to={`/profile/${blog._id}`}><img src={blog.logo} alt={`${blog.title} not uploaded an Image`} className='w-full max-h-[49vh] bg-zinc-800 rounded-md hover:scale-[1.03] sm:hover:scale-[1.01] transition-cubic cursor-pointer sm:h-auto object-cover object-center' /></NavLink>
           </div>
           <div className='w-full overflow-hidden overflow-y-auto text-zinc-100 flex flex-col gap-1'>
                <NavLink target='_block' to={`https://${blog.domain}`} className='text-2xl uppercase pb-3 font-medium'>{blog.name}</NavLink>
