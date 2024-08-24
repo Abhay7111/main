@@ -270,7 +270,7 @@ function Testingform() {
                     />
                 </div>
 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                    <label htmlFor="address" className='cursor-pointer font-semibold'>Contact</label>
+                    <label htmlFor="address" className='cursor-pointer font-semibold'>Address</label>
                     <input
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
