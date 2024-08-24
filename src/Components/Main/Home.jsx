@@ -12,7 +12,7 @@ function Home() {
           <div className='min-w-20 flex flex-col items-center justify-start'>
           <Vnav/>
           </div>
-          <div className='w-full flex items-start justify-between px-3'>
+          <div className='w-full sm:flex-row flex-col flex items-start justify-between px-3'>
           <div className='w-full overflow-y-auto calc-h'>
           <Testingform/>
           </div>
