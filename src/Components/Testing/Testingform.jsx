@@ -13,6 +13,13 @@ function Testingform() {
         price: '',
         services: '',
         contact: '',
+        youtube:'',
+        facebook:'',
+        linkedin:'',
+        instagra:'',
+        whatsap:'',
+        address:'',
+        email:'',
     });
     const [loading, setLoading] = useState(true);
     const [editingId, setEditingId] = useState(null);
@@ -50,6 +57,13 @@ function Testingform() {
                     price: '',
                     services: '',
                     contact: '',
+                    youtube:'',
+                    facebook:'',
+                    linkedin:'',
+                    instagra:'',
+                    whatsap:'',
+                    address:'',
+                    email:'',
                 });
             })
             .catch(err => {
@@ -71,6 +85,13 @@ function Testingform() {
                     price: '',
                     services: '',
                     contact: '',
+                    youtube:'',
+                    facebook:'',
+                    linkedin:'',
+                    instagra:'',
+                    whatsap:'',
+                    address:'',
+                    email:'',
                 });
                 setEditingId(null);
             })
@@ -108,7 +129,14 @@ function Testingform() {
             price: item.price,
             services: item.services,
             contact: item.contact,
+            youtube: item.youtube,
+            facebook: item.facebook,
+            linkedin: item.linkedin,
+            instagra: item.instagra,
+            whatsap: item.whatsap,
+            address: item.address,
             domain: item.domain,
+            email: item.email,
         });
         setEditingId(item._id);
     };
@@ -134,7 +162,7 @@ function Testingform() {
             <form className='p-3 flex flex-col items-start justify-start gap-5 w-96 sm:w-[50vw] m-3 rounded-xl'>
                 <h1 className='text-[11vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage Navigation Items</h1>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                    <label htmlFor="name" className='cursor-pointer font-semibold'>User name</label>
+                    <label htmlFor="name" className='cursor-pointer font-semibold'>Clint name</label>
                     <input
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
@@ -146,7 +174,7 @@ function Testingform() {
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                    <label htmlFor="domain" className='cursor-pointer font-semibold'>User domain</label>
+                    <label htmlFor="domain" className='cursor-pointer font-semibold'>Clint domain</label>
                     <input
                         className='bg-transparent lowercase border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
@@ -158,7 +186,19 @@ function Testingform() {
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                    <label htmlFor="logo" className='cursor-pointer font-semibold'>Logo</label>
+                    <label htmlFor="email" className='cursor-pointer font-semibold'>Clint email</label>
+                    <input
+                        className='bg-transparent lowercase border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
+                        type="email"
+                        id='email'
+                        name='email'
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder='email'
+                    />
+                </div>
+                <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
+                    <label htmlFor="logo" className='cursor-pointer font-semibold'>Clint Logo</label>
                     <input
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
