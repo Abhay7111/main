@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Lnav() {
   return (
-          <div className='w-full sm:w-20 h-full bg-zinc-900 flex flex-col items-center justify-between p-3 sm:pb-5 '>
+          <div className='w-full sm:w-20 h-full bg-zinc-900 flex flex-row sm:flex-col items-center justify-between p-3 sm:pb-5 '>
      <ul className='flex flex-row sm:flex-col items-center justify-start gap-3 py-2 px-2'>
           <li><NavLink to="/" className={({isActive})=>`${isActive ? "bg-zinc-600" : "bg-transparent"} p-1.5 rounded-md hover:bg-zinc-700/70 `}><i class="ri-home-4-fill text-xl font-medium text-zinc-100"></i></NavLink></li>
           <li><NavLink to="/about" className={({isActive})=>`${isActive ? "bg-zinc-600" : "bg-transparent"} p-1.5 rounded-md hover:bg-zinc-700/70 `}><i class="ri-table-fill text-xl font-medium text-zinc-100"></i></NavLink></li>
