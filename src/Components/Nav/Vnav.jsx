@@ -29,7 +29,7 @@ function Vnav() {
    }
 
   return (
-    <div className=' w-20 h-full bg-zinc-900 flex flex-col  border-r border-zinc-400 items-center justify-between pb-5 '>
+    <div className=' w-20 h-full bg-zinc-900 flex flex-row sm:flex-col  border-r border-zinc-400 items-center justify-between pb-5 '>
      <ul className='flex flex-col items-center justify-start gap-3 py-2 px-2'>
           <li><NavLink to={Vnav.home} className={({isActive})=>`${isActive ? "bg-zinc-600" : "bg-transparent"} p-1.5 rounded-md hover:bg-zinc-700/70 `}><i class="ri-home-4-line text-xl font-medium text-zinc-100"></i></NavLink></li>
           <li><NavLink to={Vnav.about} className={({isActive})=>`${isActive ? "bg-zinc-600" : "bg-transparent"} p-1.5 rounded-md hover:bg-zinc-700/70 `}><i class="ri-table-line text-xl font-medium text-zinc-100"></i></NavLink></li>
