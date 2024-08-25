@@ -160,7 +160,7 @@ function Testingform() {
                 ))}
             </ul>
             <form className='p-3 flex flex-col items-start justify-start gap-5 w-96 sm:w-[50vw] m-3 rounded-xl'>
-                <h1 className='text-[11vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage Navigation Items</h1>
+                <h1 className='text-[11vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage your clint data</h1>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="name" className='cursor-pointer font-semibold'>Clint name</label>
                     <input
@@ -267,6 +267,18 @@ function Testingform() {
                         value={formData.contact}
                         onChange={handleInputChange}
                         placeholder='Contact routes'
+                    />
+                </div>
+<div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
+                    <label htmlFor="address" className='cursor-pointer font-semibold'>Address</label>
+                    <input
+                        className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
+                        type="text"
+                        id='address'
+                        name='address'
+                        value={formData.address}
+                        onChange={handleInputChange}
+                        placeholder='Put clint address here'
                     />
                 </div>
                 {editingId ? (

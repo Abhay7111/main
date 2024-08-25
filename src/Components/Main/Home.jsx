@@ -8,16 +8,16 @@ import Webdetails from '../Details/Webdetails.jsx'
 
 function Home() {
   return (
-     <div className='flex calc-h bg-zinc-900'>
+     <div className='flex sm:flex-row flex-col calc-h bg-zinc-900'>
           <div className='min-w-20 flex flex-col items-center justify-start'>
           <Vnav/>
           </div>
-          <div className='w-full flex items-start justify-between px-3'>
+          <div className='w-full h-fit overflow-y-auto sm:flex-row flex-col flex items-start justify-between px-3'>
           <div className='w-full overflow-y-auto calc-h'>
           <Testingform/>
           </div>
-          <div className='relative w-[30vw] px-3 h-screen overflow-y-auto calc-h border-l border-zinc-500'>
-          <div className='w-full mt-5 rounded-lg p-1 text-zinc-300 min-h-30 bg-zinc-800'>
+          <div className='relative w-full sm:w-[30vw] px-3 h-fit sm:h-screen overflow-y-auto border-t sm:border-l border-zinc-500'>
+          <div className='w-full mb-1 sm:mt-5 rounded-lg p-1 text-zinc-300 h-fit sm:min-h-30 bg-zinc-800'>
           <Webdetails/>
           </div>
           </div>
