@@ -35,6 +35,7 @@ function Profile() {
           <div className='w-96 p-2 flex flex-col gap-3'>
                <h1 className='text-2xl font-medium first-letter:uppercase line-clamp-1'>{profile.name}</h1>
                <p className='opacity-85'>{profile.domain}</p>
+               <a href={`mailto:${profile.email}`}>{profile.email}</a>
                <div>
                     <p>About :</p>
                     <p className='text-sm opacity-85 font-light tracking-wide'>{profile.about}</p>
