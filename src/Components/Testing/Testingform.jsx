@@ -159,8 +159,8 @@ function Testingform() {
                     </li>
                 ))}
             </ul>
-            <form className='p-3 flex flex-col items-start justify-start gap-5 w-96 sm:w-[50vw] m-3 rounded-xl'>
-                <h1 className='text-[11vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage your clint data</h1>
+            <form className='p-3 flex flex-col items-start justify-start gap-5 w-[95%] sm:w-[90%] m-3 rounded-xl'>
+                <h1 className='text-[6.5vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage your clint data</h1>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="name" className='cursor-pointer font-semibold'>Clint name</label>
                     <input

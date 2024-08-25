@@ -51,7 +51,7 @@ function Profile() {
                     <a href={`${profile.linkedin}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-linkedin-fill"></i></a>
                     <a href={`${profile.instagram}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-instagram-fill"></i></a>
                     <a href={`${profile.whatsapp}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-whatsapp-fill"></i></a>
-<a href={`https://${profile.domain}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-link-m"></i></a>
+                    <a href={`https://${profile.domain}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-link-m"></i></a>
                </div>
           </div>
      </div>
