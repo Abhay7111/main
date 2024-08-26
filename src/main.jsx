@@ -11,15 +11,15 @@ import Webdetails from './Components/Details/Webdetails.jsx';
 import Testingform from './Components/Testing/Testingform.jsx';
 import Clintprofiles from './Components/Clint profiles/Clintprofiles.jsx';
 import Login from './Components/Login/Login.jsx';
+import Dashboard from './Components/Dashboard/Dashboard.jsx';
 
 
 const routes = createBrowserRouter([
   {path:'/', element:<Local/>,
     children:[
-      {path:'', element:<Login/>,
+      {path:'', element:<Home/>,
         children:[
           {path:'', element:<Home/>},
-          {path:'form', element:<Inputs/>,},
           {path:':id', element:<Webdetails/>,},
           {path:'*', element:<Home/>,},
         ]
@@ -44,6 +44,8 @@ const routes = createBrowserRouter([
       {path:'', element:<Clintprofiles/>,}
     ]
   },
+  {path:'login', element:<Login/>},
+  {path:'dashboard', element:<Dashboard/>,},
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

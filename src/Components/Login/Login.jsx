@@ -9,7 +9,7 @@ const Login = () => {
         event.preventDefault();
         
         try {
-            const response = await fetch('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', {
+            const response = await fetch('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', { // Update to the correct login endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
