@@ -13,7 +13,7 @@ function Home() {
           <Vnav/>
           </div>
           <div className='w-full h-fit overflow-y-auto sm:flex-row flex-col flex items-start justify-between px-3'>
-          <div className='w-full overflow-y-auto calc-h'>
+          <div className='sm:w-[63vw] w-full overflow-y-auto calc-h'>
           <Testingform/>
           </div>
           <div className='relative w-full sm:w-[30vw] px-3 h-fit sm:h-screen overflow-y-auto border-t sm:border-l border-zinc-500'>

@@ -147,7 +147,7 @@ function Testingform() {
 
     return (
         <div>
-            <ul className='p-2 bg-zinc-50 w-full sm:w-fit sm:max-[40vw] max-h-[350px] overflow-y-auto my-5 rounded-lg'>
+            <ul className='p-2 bg-zinc-50 w-full sm:w-full sm:max-w-[80%] overflow-y-auto my-5 rounded-lg'>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full'>
                         <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1'>{item.name} :</strong>
@@ -159,11 +159,12 @@ function Testingform() {
                     </li>
                 ))}
             </ul>
-            <form className='p-3 flex flex-col items-start justify-start gap-5 w-[95%] sm:w-[90%] m-3 rounded-xl'>
+            <form className='p-3 flex flex-col items-start justify-start gap-5 w-[95%] sm:w-[80%] m-3 rounded-xl'>
                 <h1 className='text-[6.5vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage your clint data</h1>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="name" className='cursor-pointer font-semibold'>Clint name</label>
                     <input
+                        required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='name'
@@ -176,6 +177,7 @@ function Testingform() {
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="domain" className='cursor-pointer font-semibold'>Clint domain</label>
                     <input
+                        required
                         className='bg-transparent lowercase border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='domain'
@@ -188,6 +190,7 @@ function Testingform() {
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="email" className='cursor-pointer font-semibold'>Clint email</label>
                     <input
+                        required
                         className='bg-transparent lowercase border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="email"
                         id='email'
@@ -200,6 +203,7 @@ function Testingform() {
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="logo" className='cursor-pointer font-semibold'>Clint Logo</label>
                     <input
+                        required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='logo'
@@ -212,6 +216,7 @@ function Testingform() {
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="home" className='cursor-pointer font-semibold'>Home</label>
                     <input
+                        required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='home'
@@ -223,19 +228,22 @@ function Testingform() {
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="about" className='cursor-pointer font-semibold'>About</label>
-                    <input
-                        className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
+                    <textarea
+                        required
+                        className='bg-transparent min-h-40 border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='about'
                         name='about'
                         value={formData.about}
                         onChange={handleInputChange}
-                        placeholder='About routes'
-                    />
+                        placeholder='About business'
+                    >
+                    </textarea>
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="price" className='cursor-pointer font-semibold'>Price</label>
                     <input
+                        required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='price'
@@ -248,6 +256,7 @@ function Testingform() {
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="services" className='cursor-pointer font-semibold'>Services</label>
                     <input
+                        required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='services'
@@ -260,6 +269,7 @@ function Testingform() {
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="contact" className='cursor-pointer font-semibold'>Contact</label>
                     <input
+                        required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='contact'
@@ -272,6 +282,7 @@ function Testingform() {
 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="address" className='cursor-pointer font-semibold'>Address</label>
                     <input
+                        required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                         type="text"
                         id='address'

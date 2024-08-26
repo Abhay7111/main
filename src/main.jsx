@@ -10,12 +10,13 @@ import Vnav from './Components/Nav/Vnav.jsx';
 import Webdetails from './Components/Details/Webdetails.jsx';
 import Testingform from './Components/Testing/Testingform.jsx';
 import Clintprofiles from './Components/Clint profiles/Clintprofiles.jsx';
+import Login from './Components/Login/Login.jsx';
 
 
 const routes = createBrowserRouter([
   {path:'/', element:<Local/>,
     children:[
-      {path:'', element:<Home/>,
+      {path:'', element:<Login/>,
         children:[
           {path:'', element:<Home/>},
           {path:'form', element:<Inputs/>,},
