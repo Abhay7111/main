@@ -6,36 +6,35 @@ const Login = () => {
     const [error, setError] = useState('');
 
     const handleLogin = async (event) => {
-        event.preventDefault();
-        
-        try {
-            const response = await fetch('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', { // Update to the correct login endpoint
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, password })
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                // Save the token in localStorage
-                localStorage.setItem('token', data.token);
-                alert('Login successful!');
-
-                // Redirect or perform actions for logged-in users
-                // Example: window.location.href = '/dashboard';
-            } else {
-                // Handle login errors
-                setError(data.message || 'Login failed');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            setError('An unexpected error occurred');
-        }
-    };
-
+     event.preventDefault();
+     
+     try {
+         const response = await fetch('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', { // Your login endpoint
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({ username, password })
+         });
+ 
+         const data = await response.json();
+ 
+         if (response.ok) {
+             // Save the token in localStorage
+             localStorage.setItem('token', data.token);
+             alert('Login successful!');
+ 
+             // Redirect to dashboard or another protected page
+             window.location.href = '/dashboard';
+         } else {
+             setError(data.message || 'Login failed');
+         }
+     } catch (error) {
+         console.error('Error:', error);
+         setError('An unexpected error occurred');
+     }
+ };
+ 
     return (
         <div>
             <h2>Login</h2>
