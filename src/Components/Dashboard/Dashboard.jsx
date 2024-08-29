@@ -40,7 +40,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
+        <div className='text-zinc-100'>
             <h2>Dashboard</h2>
             {data ? (
                 <div>
