@@ -20,6 +20,7 @@ function Testingform() {
         whatsap:'',
         address:'',
         email:'',
+        date:'',
     });
     const [loading, setLoading] = useState(true);
     const [editingId, setEditingId] = useState(null);
@@ -64,6 +65,7 @@ function Testingform() {
                     whatsap:'',
                     address:'',
                     email:'',
+                    date:'',
                 });
             })
             .catch(err => {
@@ -92,6 +94,7 @@ function Testingform() {
                     whatsap:'',
                     address:'',
                     email:'',
+                    date:'',
                 });
                 setEditingId(null);
             })
@@ -137,6 +140,7 @@ function Testingform() {
             address: item.address,
             domain: item.domain,
             email: item.email,
+            date: item.date,
         });
         setEditingId(item._id);
     };
@@ -147,12 +151,13 @@ function Testingform() {
 
     return (
         <div>
-            <ul className='p-2 bg-zinc-50 w-full sm:w-full sm:max-w-[80%] overflow-y-auto my-5 rounded-lg'>
+            <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#f7a2a1] w-full sm:w-full sm:max-w-[80%] overflow-y-auto my-5 rounded-lg'>
                 {navItems.map(item => (
-                    <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full'>
+                    <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
                         <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1'>{item.name} :</strong>
                         <div className='flex items-center gap-2'>
-                            <button onClick={() => startEditing(item)} className='px-5 py-1.5 rounded-md bg-blue-400 hover:bg-blue-500 transition-all text-sm font-medium'>Edit</button>
+                            <p className='text-sm font-normal'>Last updated :- {item.date}</p>
+                            <button onClick={() => startEditing(item)} className='px-5 py-1.5 rounded-md bg-blue-400/80 hover:bg-blue-500 transition-all text-sm font-medium'>Edit</button>
                             <button onClick={() => handleDelete(item._id)} className='px-4 py-1.5 rounded-md bg-red-400 hover:bg-red-500 transition-all text-sm font-medium'>Delete</button>
                         </div>
                     </li>
@@ -278,7 +283,7 @@ function Testingform() {
                         placeholder='Contact routes'
                     />
                 </div>
-<div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
+                <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="address" className='cursor-pointer font-semibold'>Address</label>
                     <input
                         required
@@ -289,6 +294,19 @@ function Testingform() {
                         value={formData.address}
                         onChange={handleInputChange}
                         placeholder='Put clint address here'
+                    />
+                </div>
+                <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
+                    <label htmlFor="date" className='cursor-pointer font-semibold'>Date</label>
+                    <input
+                        required
+                        className='bg-transparent w-fit border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
+                        type="date"
+                        id='date'
+                        name='date'
+                        value={formData.date}
+                        onChange={handleInputChange}
+                        title=''
                     />
                 </div>
                 {editingId ? (

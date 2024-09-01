@@ -18,7 +18,7 @@ function Profile() {
           })
      }, [id])
 
-     if(loding){
+     if(profile){
           return <p>Loading... profile data</p>
      }
      if(!profile){
