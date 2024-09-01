@@ -3,6 +3,17 @@ import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 function Testingform() {
+
+    const [dateTime, setDateTime] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent page refresh
+    const currentDateTime = new Date().toLocaleString(); // Get current date and time
+    setDateTime(currentDateTime);
+    console.log('Form submitted at:', currentDateTime);
+    // You can also send this date and time to an API or handle it as needed
+  };
+
     const [navItems, setNavItems] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
@@ -151,12 +162,12 @@ function Testingform() {
 
     return (
         <div>
-            <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#f7a2a1] w-full sm:w-full sm:max-w-[80%] overflow-y-auto my-5 rounded-lg'>
+            <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#f7a2a1] w-full sm:w-full sm:max-w-[80%] max-h-[55vh] overflow-y-auto my-5 rounded-lg'>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
                         <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1'>{item.name} :</strong>
                         <div className='flex items-center gap-2'>
-                            <p className='text-sm font-normal'>Last updated :- {item.date}</p>
+                            <p className='text-sm font-normal'>Last updated :- <span className='font-medium text-xs'>{item.date}</span></p>
                             <button onClick={() => startEditing(item)} className='px-5 py-1.5 rounded-md bg-blue-400/80 hover:bg-blue-500 transition-all text-sm font-medium'>Edit</button>
                             <button onClick={() => handleDelete(item._id)} className='px-4 py-1.5 rounded-md bg-red-400 hover:bg-red-500 transition-all text-sm font-medium'>Delete</button>
                         </div>
