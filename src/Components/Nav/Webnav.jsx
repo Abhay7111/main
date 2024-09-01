@@ -10,7 +10,7 @@ function Webnav() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542`)
+    axios.get(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/`)
       .then(response => {
         setNav(response.data);
         setLoading(false);
@@ -22,7 +22,7 @@ function Webnav() {
 
   const handleOptionClick = (event) => {
     const selectedId = event.target.value;
-    navigate(`/getnav0132134542/${selectedId}`); // Navigate to the selected option's route
+    navigate(`/profile/${selectedId}`); // Navigate to the selected option's route
   };
 
   if (loading) {

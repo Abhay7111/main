@@ -45,7 +45,7 @@ function Inputs() {
       });
   };
   return (
-    <div className='w-full'>
+    <div className='w-full overflow-y-auto'>
      <form action="" method="post" onSubmit={handleSubmit} className='p-3 flex flex-col items-start justify-start gap-5  w-96 sm:w-[600px] m-3 rounded-xl'>
           <div className='bg-zinc-200 p-5 rounded-lg flex flex-col gap-2 w-full'>
                <label htmlFor="name" className='cursor-pointer font-semibold'>User name</label>

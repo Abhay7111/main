@@ -40,7 +40,7 @@ function Profile() {
                     <p>About :</p>
                     <p className='text-sm opacity-85 font-light tracking-wide'>{profile.about}</p>
                </div>
-               <p className='font-medium'>Contact : <span className='opacity-85 font-light'>{profile.contact}</span></p>
+               <p className='font-medium'>Contact : <span className='opacity-85 font-light'><a href={`tel:${profile.contact}`}>{profile.contact}</a></span></p>
                <div>
                    <p className='font-medium'>Address :</p> 
                    <p className='text-sm opacity-85 font-light tracking-wide'>{profile.address}</p>
