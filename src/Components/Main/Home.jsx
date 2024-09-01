@@ -5,6 +5,8 @@ import Inputs from '../Inputs/Inputs'
 import Testingform from '../Testing/Testingform'
 import Homeoutlet from './Homeoutlet'
 import Webdetails from '../Details/Webdetails.jsx'
+import List from '../Clint profiles/ClintList/List.jsx'
+import Dshow from './dshow.jsx'
 
 function Home() {
   return (
@@ -14,7 +16,7 @@ function Home() {
           </div>
           <div className='w-full h-fit overflow-y-auto sm:flex-row flex-col flex items-start justify-between px-3'>
           <div className='sm:w-[63vw] w-full overflow-y-auto calc-h'>
-          <Testingform/>
+          <Dshow/>
           </div>
           <div className='relative w-full sm:w-[30vw] px-3 h-fit sm:h-screen overflow-y-auto border-t sm:border-l border-zinc-500'>
           <div className='w-full mb-1 rounded-lg p-1 text-zinc-300 h-fit sm:min-h-30 bg-zinc-800'>

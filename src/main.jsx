@@ -12,6 +12,8 @@ import Testingform from './Components/Testing/Testingform.jsx';
 import Clintprofiles from './Components/Clint profiles/Clintprofiles.jsx';
 import Login from './Components/Login/Login.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
+import List from './Components/Clint profiles/ClintList/List.jsx';
+import Dshow from './Components/Main/dshow.jsx';
 
 
 const routes = createBrowserRouter([
@@ -19,8 +21,13 @@ const routes = createBrowserRouter([
     children:[
       {path:'', element:<Home/>,
         children:[
-          {path:'', element:<Home/>},
-          {path:':id', element:<Webdetails/>,},
+          {path:'', element:<Dshow/>,
+            children:[
+              {path:'', element:<List/>,},
+              {path:'info', element:<Testingform/>,},
+            ]
+          },
+          {path:'/:id', element:<Webdetails/>,},
           {path:'*', element:<Home/>,},
         ]
       },
