@@ -165,9 +165,9 @@ function Testingform() {
             <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#f7a2a1] w-full sm:w-full sm:max-w-[80%] max-h-[55vh] overflow-y-auto my-5 rounded-lg'>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
-                        <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1'>{item.name} :</strong>
+                        <a target='_blank' href={`https://${item.domain}`}><strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap text-nowrap'> <span><img src={item.logo} alt="sorry" className='w-8 max-h-8 object-cover rounded-md' /></span> {item.domain} :-</strong></a>
                         <div className='flex items-center gap-2'>
-                            <p className='text-sm font-normal'>Last updated :- <span className='font-medium text-xs'>{item.date}</span></p>
+                            <p className='text-sm font-normal line-clamp-1 max-w-40'>Last updated :- <span className='font-medium text-xs'>{item.date}</span></p>
                             <button onClick={() => startEditing(item)} className='px-5 py-1.5 rounded-md bg-blue-400/80 hover:bg-blue-500 transition-all text-sm font-medium'>Edit</button>
                             <button onClick={() => handleDelete(item._id)} className='px-4 py-1.5 rounded-md bg-red-400 hover:bg-red-500 transition-all text-sm font-medium'>Delete</button>
                         </div>
