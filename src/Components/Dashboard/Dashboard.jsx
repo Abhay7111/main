@@ -15,7 +15,7 @@ const Dashboard = () => {
             return;
         }
 
-        fetch('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', { // Replace with your actual API endpoint
+        fetch('http://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', { // Replace with your actual API endpoint
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token, // Include the token in the Authorization header

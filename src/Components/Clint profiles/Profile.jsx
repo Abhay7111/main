@@ -18,22 +18,24 @@ function Profile() {
           })
      }, [id])
 
-     if(profile){
+     if(!profile){
           return <p>Loading... profile data</p>
      }
-     if(!profile){
+     if(loding){
           return <p>sorry Profile not found</p>
      }
 
 
   return (
     <div className='w-full h-auto text-zinc-100 flex flex-col items-center justify-start sm:flex-row sm:items-start sm:justify-between px-2 sm:px-5'>
-     <div className='w-full sm:w-[50vw] py-3 flex flex-col items-center justify-start sm:flex-row sm:items-start sm:justify-between px-2'>
-          <div className='size-52 rounded-full flex items-center justify-center border border-zinc-700 overflow-hidden'>
-               <img src={profile.logo} alt="Profile image not found" className='w-full h-auto object-cover' />
+     <div className='w-full sm:w-[50vw] py-3 flex flex-col gap-3 items-center justify-start sm:flex-row sm:items-start sm:justify-between px-2'>
+          <div className='max-w-72'>
+               <div className='w-full rounded-2xl flex items-center justify-center overflow-hidden'>
+                    <img src={profile.logo} alt="Profile image not found" className='w-full h-auto object-cover' />
+               </div>
+               <h1 className='text-2xl mt-2 font-medium first-letter:uppercase line-clamp-1'>{profile.name}</h1>
           </div>
-          <div className='w-96 p-2 flex flex-col gap-3'>
-               <h1 className='text-2xl font-medium first-letter:uppercase line-clamp-1'>{profile.name}</h1>
+          <div className='w-96 p-2 flex flex-col gap-1.5'>
                <p className='opacity-85'>{profile.domain}</p>
                <a href={`mailto:${profile.email}`}>{profile.email}</a>
                <div>
