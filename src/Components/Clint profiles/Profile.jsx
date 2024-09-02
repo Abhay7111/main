@@ -48,10 +48,10 @@ function Profile() {
                    <p className='text-sm opacity-85 font-light tracking-wide'>{profile.address}</p>
                </div>
                <div className='flex items-center justify-start gap-2'>
-                    <a href={`${profile.youtube}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-youtube-fill"></i></a>
-                    <a href={`${profile.facebook}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-facebook-fill"></i></a>
-                    <a href={`${profile.linkedin}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-linkedin-fill"></i></a>
-                    <a href={`${profile.instagram}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-instagram-fill"></i></a>
+                    <a href={`https://www.youtube.com/@${profile.youtube}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-youtube-fill"></i></a>
+                    <a href={`https://www.facebook.com/${profile.facebook}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-facebook-fill"></i></a>
+                    <a href={`https://www.linkedin.com/in/${profile.linkedin}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-linkedin-fill"></i></a>
+                    <a href={`https://www.instagram.com/${profile.instagram}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-instagram-fill"></i></a>
                     <a href={`https://wa.me/${profile.contact}?text=`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-whatsapp-fill"></i></a>
                     <a href={`https://${profile.domain}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-link-m"></i></a>
                </div>
