@@ -166,10 +166,10 @@ function Testingform() {
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
                         <a target='_blank' href={`https://${item.domain}`}><strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap text-nowrap'> <span><img src={item.logo} alt="sorry" className='w-8 max-h-8 object-cover rounded-md' /></span> <span className=' max-w-40 sm:max-w-fit line-clamp-1'>{item.domain}</span> :-</strong></a>
-                        <div className='flex items-center gap-2'>
+                        <div className='flex items-center gap-1'>
                             <p className='text-xs font-bold line-clamp-1 max-w-40'>Last updated :- <span className='font-medium text-xs'>{item.date}</span></p>
-                            <button onClick={() => startEditing(item)} className='size-3.5 rounded-full bg-blue-400/80 hover:bg-blue-500 transition-all text-xs font-medium text-zinc-600'></button>
-                            <button onClick={() => handleDelete(item._id)} className='size-3.5 rounded-full bg-red-400 hover:bg-red-500 transition-all text-xs font-medium text-zinc-600'></button>
+                            <span className='flex items-center justify-between gap-1.5 w-8.5'><button onClick={() => startEditing(item)} className='size-3.5 rounded-full bg-blue-400/80 hover:bg-blue-500 transition-all text-xs font-medium text-zinc-600'></button>
+                            <button onClick={() => handleDelete(item._id)} className='size-3.5 rounded-full bg-red-400 hover:bg-red-500 transition-all text-xs font-medium text-zinc-600'></button></span>
                         </div>
                     </li>
                 ))}
