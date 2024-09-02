@@ -5,20 +5,14 @@ import { NavLink } from 'react-router-dom';
 function List() {
      const [navItems, setNavItems] = useState([]);
      useEffect(() => {
-          // Fetch all navigation items
           axios.get('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542')
-              .then(response => {
-                  setNavItems(response.data);
-                  setLoading(false);
-              })
-              .catch(err => {
-                  console.error('Error fetching nav items:', err);
-                  setLoading(false);
-              });
-      }, []);
+              .then(response => {setNavItems(response.data);})
+      });
+
   return (
     <div>
      <ul className='p-2 bg-zinc-50 w-full sm:w-full sm:max-w-[80%] overflow-y-auto my-5 rounded-lg'>
+          <p className='border-b-2 border-zinc-500'>Total Clints : <span className='font-medium'>{navItems.length}</span></p>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full'>
                         <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start'> <span><img src={item.logo} alt="sorry" className='w-8 max-h-8 object-cover rounded-md' /></span> {item.name} :</strong>
