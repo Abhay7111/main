@@ -128,7 +128,7 @@ function Testingform() {
                     <p className='text-xs'>Total Paid: <span className='font-bold'>₹{totalPrice}</span></p>
                 </div>
                 {navItems.map(item => (
-                    <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
+                    <li key={item._id} className='flex items-center justify-between py-1.5 w-full border-b border-zinc-400'>
                         <a target='_blank' href={`https://${item.domain}`} rel="noreferrer" className='w-[60%]'>
                             <strong className='text-zinc-700 w-full text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap'>
                                 <span>
