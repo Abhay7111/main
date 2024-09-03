@@ -27,7 +27,7 @@ function List() {
      <ul className='p-2 bg-zinc-50 w-full sm:w-full sm:max-w-[80%] overflow-y-auto my-5 rounded-lg'>
           <div className='pb-2 flex items-center justify-between'>
                <p className='text-sm'>Total Clints : <span className='font-medium'>{navItems.length}</span></p>
-               <p className='text-xs max-w-60 flex gap-5'><span className='line-clamp-1'>Total Paid: <span className='font-bold text-sm'>₹{totalPrice}</span></span><NavLink to={`/info`} className={`text-2xl w-5 h-5 text-zinc-600 hover:text-zinc-800 bg-zinc-300 hover:bg-zinc-400 transition-all cursor-pointer rounded-full flex items-center justify-center`}><i class="ri-information-line"></i></NavLink></p>
+               <p className='text-xs sm:max-w-[50%] max-w-[75%] flex gap-5'><span className='line-clamp-1'>Total Paid: <span className='font-bold text-sm'>₹{totalPrice}</span></span><NavLink to={`/info`} className={`text-2xl w-5 h-5 text-zinc-600 hover:text-zinc-800 bg-zinc-300 hover:bg-zinc-400 transition-all cursor-pointer rounded-full flex items-center justify-center`}><i class="ri-information-line"></i></NavLink></p>
           </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full'>
