@@ -151,7 +151,7 @@ function Testingform() {
             </ul>
             <div className='calc-h overflow-y-auto'>
                 <h1 className='text-[6.5vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage your clint data</h1>
-            <form className='p-3 flex flex-col items-start justify-start gap-5 w-[95%] sm:w-[50vw] rounded-xl'>
+            <form className='p-3 flex flex-col items-start justify-start gap-5 w-full sm:w-[47vw] rounded-xl'>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="name" className='cursor-pointer font-semibold'>Clint name</label>
                     <input
