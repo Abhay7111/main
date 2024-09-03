@@ -1,19 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Testingform() {
-
-    const [dateTime, setDateTime] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent page refresh
-    const currentDateTime = new Date().toLocaleString(); // Get current date and time
-    setDateTime(currentDateTime);
-    console.log('Form submitted at:', currentDateTime);
-    // You can also send this date and time to an API or handle it as needed
-  };
-
     const [navItems, setNavItems] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
@@ -24,21 +13,22 @@ function Testingform() {
         price: '',
         services: '',
         contact: '',
-        youtube:'',
-        facebook:'',
-        linkedin:'',
-        instagra:'',
-        whatsap:'',
-        address:'',
-        email:'',
-        date:'',
+        youtube: '',
+        facebook: '',
+        linkedin: '',
+        instagra: '',
+        whatsap: '',
+        address: '',
+        email: '',
+        date: '',
     });
     const [loading, setLoading] = useState(true);
     const [editingId, setEditingId] = useState(null);
+    const [totalPrice, setTotalPrice] = useState(0);
     const navigate = useNavigate();
 
+    // Fetch all navigation items
     useEffect(() => {
-        // Fetch all navigation items
         axios.get('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542')
             .then(response => {
                 setNavItems(response.data);
@@ -50,34 +40,44 @@ function Testingform() {
             });
     }, []);
 
+    // Calculate the sum of all prices whenever navItems changes
+    useEffect(() => {
+        const sum = navItems.reduce((total, item) => total + parseFloat(item.price || 0), 0);
+        setTotalPrice(sum);
+    }, [navItems]);
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
+    const resetForm = () => {
+        setFormData({
+            name: '',
+            domain: '',
+            logo: '',
+            home: '',
+            about: '',
+            price: '',
+            services: '',
+            contact: '',
+            youtube: '',
+            facebook: '',
+            linkedin: '',
+            instagra: '',
+            whatsap: '',
+            address: '',
+            email: '',
+            date: '',
+        });
+        setEditingId(null);
+    };
+
     const handleCreate = () => {
-        // Create a new navigation item
         axios.post('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', formData)
             .then(response => {
                 setNavItems([...navItems, response.data]);
-                setFormData({
-                    name: '',
-                    domain: '',
-                    logo: '',
-                    home: '',
-                    about: '',
-                    price: '',
-                    services: '',
-                    contact: '',
-                    youtube:'',
-                    facebook:'',
-                    linkedin:'',
-                    instagra:'',
-                    whatsap:'',
-                    address:'',
-                    email:'',
-                    date:'',
-                });
+                resetForm();
             })
             .catch(err => {
                 console.error('Error creating nav item:', err);
@@ -85,29 +85,10 @@ function Testingform() {
     };
 
     const handleUpdate = (id) => {
-        // Update an existing navigation item
         axios.put(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`, formData)
             .then(response => {
                 setNavItems(navItems.map(item => item._id === id ? response.data : item));
-                setFormData({
-                    name: '',
-                    domain: '',
-                    logo: '',
-                    home: '',
-                    about: '',
-                    price: '',
-                    services: '',
-                    contact: '',
-                    youtube:'',
-                    facebook:'',
-                    linkedin:'',
-                    instagra:'',
-                    whatsap:'',
-                    address:'',
-                    email:'',
-                    date:'',
-                });
-                setEditingId(null);
+                resetForm();
             })
             .catch(err => {
                 console.error('Error updating nav item:', err);
@@ -115,11 +96,7 @@ function Testingform() {
     };
 
     const handleDelete = (id) => {
-        // Ask for confirmation before deleting
-        const confirmDelete = window.confirm('Are you sure you want to delete this navigation item?');
-
-        if (confirmDelete) {
-            // Delete a navigation item
+        if (window.confirm('Are you sure you want to delete this navigation item?')) {
             axios.delete(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`)
                 .then(() => {
                     setNavItems(navItems.filter(item => item._id !== id));
@@ -135,24 +112,7 @@ function Testingform() {
     };
 
     const startEditing = (item) => {
-        setFormData({
-            name: item.name,
-            logo: item.logo,
-            home: item.home,
-            about: item.about,
-            price: item.price,
-            services: item.services,
-            contact: item.contact,
-            youtube: item.youtube,
-            facebook: item.facebook,
-            linkedin: item.linkedin,
-            instagra: item.instagra,
-            whatsap: item.whatsap,
-            address: item.address,
-            domain: item.domain,
-            email: item.email,
-            date: item.date,
-        });
+        setFormData(item);
         setEditingId(item._id);
     };
 
@@ -163,13 +123,28 @@ function Testingform() {
     return (
         <div>
             <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#fab3b2] w-full sm:w-full sm:max-w-[80%] max-h-[55vh] overflow-y-auto my-5 rounded-lg'>
+                <div className='flex items-center justify-between px-1'>
+                    <p className='text-xs'>No. of clients: <span className='font-bold text-sm'>{navItems.length}</span></p>
+                    <p>Total Price: {totalPrice}</p>
+                </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
-                        <a target='_blank' href={`https://${item.domain}`}><strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap text-nowrap'> <span><img src={item.logo} alt="sorry" className='w-8 max-h-8 object-cover rounded-md' /></span> <span className=' max-w-40 sm:max-w-fit line-clamp-1'>{item.domain}</span> :-</strong></a>
+                        <a target='_blank' href={`https://${item.domain}`} rel="noreferrer">
+                            <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap'>
+                                <span>
+                                    <img src={item.logo} alt="logo" className='w-8 max-h-8 object-cover rounded-md' />
+                                </span>
+                                <span className=' max-w-40 sm:max-w-fit line-clamp-1'>{item.domain}</span>
+                            </strong>
+                        </a>
                         <div className='flex items-center gap-1'>
-                            <p className='text-xs font-bold line-clamp-1 max-w-40'>Last updated :- <span className='font-medium text-xs'>{item.date}</span></p>
-                            <span className='flex items-center justify-between gap-1.5 w-8.5'><button onClick={() => startEditing(item)} className='size-3.5 rounded-full bg-blue-400/80 hover:bg-blue-500 transition-all text-xs font-medium text-zinc-600'></button>
-                            <button onClick={() => handleDelete(item._id)} className='size-3.5 rounded-full bg-red-400 hover:bg-red-500 transition-all text-xs font-medium text-zinc-600'></button></span>
+                            <p title={`Last updated ${item.date}`} className='text-xs font-bold line-clamp-1 max-w-16 cursor-default text-end'>
+                                <span className='font-medium text-xs'>{item.date}</span>
+                            </p>
+                            <span className='flex items-center justify-between gap-1.5 w-8.5'>
+                                <button title='Edit Client' onClick={() => startEditing(item)} className='size-3.5 rounded-full bg-blue-400/80 hover:bg-blue-500 transition-all text-xs font-medium text-zinc-600'></button>
+                                <button title='Delete Client' onClick={() => handleDelete(item._id)} className='size-3.5 rounded-full bg-red-400 hover:bg-red-500 transition-all text-xs font-medium text-zinc-600'></button>
+                            </span>
                         </div>
                     </li>
                 ))}
@@ -260,7 +235,7 @@ function Testingform() {
                     <input
                         required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
-                        type="text"
+                        type="number"
                         id='price'
                         name='price'
                         value={formData.price}
@@ -286,7 +261,7 @@ function Testingform() {
                     <input
                         required
                         className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
-                        type="text"
+                        type="tel"
                         id='contact'
                         name='contact'
                         value={formData.contact}
