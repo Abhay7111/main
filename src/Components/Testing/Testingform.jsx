@@ -123,9 +123,9 @@ function Testingform() {
     return (
         <div>
             <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#fab3b2] w-full sm:w-full sm:max-w-[80%] max-h-[55vh] overflow-y-auto my-5 rounded-lg'>
-                <div className='flex items-center justify-between px-1'>
+                <div className='flex items-center justify-between px-1 pb-2'>
                     <p className='text-xs'>No. of clients: <span className='font-bold text-sm'>{navItems.length}</span></p>
-                    <p>Total Price: {totalPrice}</p>
+                    <p className='text-xs'>Total Paid: <span className='font-bold'>₹{totalPrice}</span></p>
                 </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
