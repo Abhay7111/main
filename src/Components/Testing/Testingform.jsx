@@ -129,8 +129,8 @@ function Testingform() {
                 </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full border-b border-zinc-400'>
-                        <a target='_blank' href={`https://${item.domain}`} rel="noreferrer">
-                            <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap'>
+                        <a target='_blank' href={`https://${item.domain}`} rel="noreferrer" className='w-[60%]'>
+                            <strong className='text-zinc-700 w-full text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap'>
                                 <span>
                                     <img src={item.logo} alt="logo" className='w-8 max-h-8 object-cover rounded-md' />
                                 </span>
