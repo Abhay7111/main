@@ -15,7 +15,7 @@ function Home() {
           <Vnav/>
           </div>
           <div className='w-full h-fit overflow-y-auto sm:flex-row flex-col flex items-start justify-between px-3'>
-          <div className='sm:w-[63vw] w-full overflow-y-auto calc-h'>
+          <div className='sm:min-w-[63vw] w-full overflow-y-auto calc-h'>
           <Dshow/>
           </div>
           </div>

@@ -121,8 +121,8 @@ function Testingform() {
     }
 
     return (
-        <div>
-            <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#fab3b2] w-full sm:w-full sm:max-w-[80%] max-h-[55vh] overflow-y-auto my-5 rounded-lg'>
+        <div className='sm:flex items-start justify-between'>
+            <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#fab3b2] w-full sm:w-full sm:max-w-[40vw] max-h-[55vh] overflow-y-auto my-5 rounded-lg'>
                 <div className='flex items-center justify-between px-1 pb-2'>
                     <p className='text-xs'>No. of clients: <span className='font-bold text-sm'>{navItems.length}</span></p>
                     <p className='text-xs'>Total Paid: <span className='font-bold'>₹{totalPrice}</span></p>
@@ -149,8 +149,9 @@ function Testingform() {
                     </li>
                 ))}
             </ul>
-            <form className='p-3 flex flex-col items-start justify-start gap-5 w-[95%] sm:w-[80%] m-3 rounded-xl'>
+            <div className='calc-h overflow-y-auto'>
                 <h1 className='text-[6.5vw] sm:text-[3.2vw] text-zinc-200 font-medium'>Manage your clint data</h1>
+            <form className='p-3 flex flex-col items-start justify-start gap-5 w-[95%] sm:w-[50vw] rounded-xl'>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                     <label htmlFor="name" className='cursor-pointer font-semibold'>Clint name</label>
                     <input
@@ -213,7 +214,7 @@ function Testingform() {
                         name='home'
                         value={formData.home}
                         onChange={handleInputChange}
-                        placeholder='Home routes'
+                        placeholder='Home '
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
@@ -240,7 +241,7 @@ function Testingform() {
                         name='price'
                         value={formData.price}
                         onChange={handleInputChange}
-                        placeholder='Price routes'
+                        placeholder='Price '
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
@@ -253,7 +254,7 @@ function Testingform() {
                         name='services'
                         value={formData.services}
                         onChange={handleInputChange}
-                        placeholder='Services routes'
+                        placeholder='Services '
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
@@ -266,7 +267,7 @@ function Testingform() {
                         name='contact'
                         value={formData.contact}
                         onChange={handleInputChange}
-                        placeholder='Contact routes'
+                        placeholder='Ex. 1234567890'
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
@@ -279,7 +280,7 @@ function Testingform() {
                         name='address'
                         value={formData.address}
                         onChange={handleInputChange}
-                        placeholder='Put clint address here'
+                        placeholder='Address'
                     />
                 </div>
                 <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
@@ -301,6 +302,7 @@ function Testingform() {
                     <button onClick={handleCreate} className='px-3 py-1.5 rounded-md bg-green-400 hover:bg-green-500 transition-all text-sm font-medium'>Create</button>
                 )}
             </form>
+            </div>
         </div>
     );
 }
