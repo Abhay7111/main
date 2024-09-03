@@ -8,11 +8,27 @@ function List() {
           axios.get('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542')
               .then(response => {setNavItems(response.data);})
       });
+      const [totalPrice, setTotalPrice] = useState(0);
+
+       // Calculate the sum of all prices whenever navItems changes
+    useEffect(() => {
+     const sum = navItems.reduce((total, item) => total + parseFloat(item.price || 0), 0);
+     setTotalPrice(sum);
+ }, [navItems]);
+
+ const handleInputChange = (e) => {
+     const { name, value } = e.target;
+     setFormData({ ...formData, [name]: value });
+ };
+      
 
   return (
     <div>
      <ul className='p-2 bg-zinc-50 w-full sm:w-full sm:max-w-[80%] overflow-y-auto my-5 rounded-lg'>
-          <p className='text-sm'>Total Clints : <span className='font-medium'>{navItems.length}</span></p>
+          <div className='pb-2 flex items-center justify-between'>
+               <p className='text-sm'>Total Clints : <span className='font-medium'>{navItems.length}</span></p>
+               <p className='text-xs line-clamp-1 max-w-60'>Total Paid: <span className='font-bold text-sm'>₹{totalPrice}</span></p>
+          </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full'>
                         <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start'> <span><img src={item.logo} alt="sorry" className='w-8 max-h-8 object-cover rounded-md' /></span> {item.domain} :-</strong>
