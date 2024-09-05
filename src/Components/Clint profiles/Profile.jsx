@@ -51,7 +51,7 @@ function Profile() {
                          <a href={`https://www.facebook.com/${profile.facebook}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-facebook-fill"></i></a>
                          <a href={`https://www.linkedin.com/in/${profile.linkedin}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-linkedin-fill"></i></a>
                          <a href={`https://www.instagram.com/${profile.instagram}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-instagram-fill"></i></a>
-                         <a href={`https://wa.me/${profile.contact}?text=`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-whatsapp-fill"></i></a>
+                         <a href={`https://api.whatsapp.com/send/?phone=${profile.contact}&text&type=phone_number&app_absent=0`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-whatsapp-fill"></i></a>
                          <a href={`https://${profile.domain}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-link-m"></i></a>
                     </div>
                </div>
@@ -66,7 +66,7 @@ function Profile() {
                     </div>
                     <div className='mt-2 px-2 w-full'>
                          <p className='pt-3 font-medium w-full border-b border-zinc-700 pb-1 mb-2.5'>Services</p>
-                         <p className='text-sm font-light md:pr-20 pl-5 opacity-80'>{profile.services}</p>
+                         <p className='text-sm font-normal md:pr-20 pl-5 opacity-90'>{profile.services}</p>
                     </div>
                </div>
 
