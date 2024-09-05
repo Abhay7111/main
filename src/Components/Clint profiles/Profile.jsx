@@ -59,13 +59,13 @@ function Profile() {
           <div className='min-h-20 border border-zinc-600 w-full bg-zinc-800 rounded-xl p-3'>
                <p className='text-xs opacity-80 font-extralight tracking-wide pb-3'><span className='text-sm'>/</span> {profile.name} / Readme</p>
                <div>
-                    <a href={`#${profile.name}`} className='text-2xl font-semibold cursor-default'>Hi there, I'm {profile.name}</a>
-                    <div className='py-2 px-2'>
-                         <label className='pt-3 font-medium'>About</label>
+                    <a href={`#${profile.name}`} className='text-2xl font-semibold cursor-default'>Hey there! I'm {profile.name}</a>
+                    <div className='mt-2 px-2 w-full'>
+                         <p className='pt-3 font-medium w-full border-b border-zinc-700 pb-1 mb-2.5'>About</p>
                          <p className='text-xs font-normal md:pr-20 pl-5 opacity-90'>{profile.about}</p>
                     </div>
-                    <div className='py-2 px-2'>
-                         <label className='pt-3 font-medium'>Services</label>
+                    <div className='mt-2 px-2 w-full'>
+                         <p className='pt-3 font-medium w-full border-b border-zinc-700 pb-1 mb-2.5'>Services</p>
                          <p className='text-sm font-light md:pr-20 pl-5 opacity-80'>{profile.services}</p>
                     </div>
                </div>
