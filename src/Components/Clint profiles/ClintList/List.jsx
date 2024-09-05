@@ -31,7 +31,7 @@ function List() {
           </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between gap-10 py-1.5 w-full'>
-                         <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start'> <span><img src={item.logo} alt="sorry" className='w-8 max-h-8 object-cover rounded-md' /></span> {item.domain}</strong>
+                         <strong className='text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start'> <span><NavLink to={`/profile/${item._id}`}><img src={item.logo} alt="sorry" className='w-8 max-h-8 object-cover rounded-md' /></NavLink></span> {item.domain}</strong>
                          <p className='text-xs line-clamp-1 w-16'><span className='font-bold'>₹ {item.price}</span></p>
                     </li>
                 ))}
