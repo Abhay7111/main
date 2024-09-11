@@ -11,7 +11,8 @@ function Testingform() {
         logo: '',
         home: '',
         about: '',
-        price: '',
+        paid: '',
+        remain: '',
         services: '',
         contact: '',
         youtube: '',
@@ -43,7 +44,7 @@ function Testingform() {
 
     // Calculate the sum of all prices whenever navItems changes
     useEffect(() => {
-        const sum = navItems.reduce((total, item) => total + parseFloat(item.price || 0), 0);
+        const sum = navItems.reduce((total, item) => total + parseInt(item.price || 0), 0);
         setTotalPrice(sum);
     }, [navItems]);
 
@@ -59,7 +60,8 @@ function Testingform() {
             logo: '',
             home: '',
             about: '',
-            price: '',
+            paid: '',
+            remain: '',
             services: '',
             contact: '',
             youtube: '',
@@ -244,29 +246,29 @@ function Testingform() {
                             </textarea>
                         </div>
                         <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                            <label htmlFor="price" className='cursor-pointer font-semibold'>Price</label>
+                            <label htmlFor="Paid" className='cursor-pointer font-semibold'>Paid</label>
                             <input
                                 required
                                 className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                                 type="number"
-                                id='price'
-                                name='price'
-                                value={formData.price.paid}
+                                id='Paid'
+                                name='Paid'
+                                value={formData.paid}
                                 onChange={handleInputChange}
-                                placeholder='Price '
+                                placeholder='Paid ballance'
                             />
                         </div>
                         <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                            <label htmlFor="price" className='cursor-pointer font-semibold'>Price</label>
+                            <label htmlFor="remain" className='cursor-pointer font-semibold'>Remain</label>
                             <input
                                 required
                                 className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                                 type="number"
-                                id='price'
-                                name='price'
-                                value={formData.price.remain}
+                                id='remain'
+                                name='remain'
+                                value={formData.remain}
                                 onChange={handleInputChange}
-                                placeholder='Price '
+                                placeholder='Remain ballance '
                             />
                         </div>
                         <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
