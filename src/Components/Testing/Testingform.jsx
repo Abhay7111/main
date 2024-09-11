@@ -251,7 +251,7 @@ function Testingform() {
                                 type="number"
                                 id='price'
                                 name='price'
-                                value={formData.price}
+                                value={formData.price.paid}
                                 onChange={handleInputChange}
                                 placeholder='Price '
                             />
