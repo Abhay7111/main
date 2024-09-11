@@ -15,6 +15,7 @@ import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import List from './Components/Clint profiles/ClintList/List.jsx';
 import Dshow from './Components/Main/dshow.jsx';
 import Details from './Components/Details/Details.jsx';
+// import '../src/functions/oof.js'
 
 
 const routes = createBrowserRouter([
