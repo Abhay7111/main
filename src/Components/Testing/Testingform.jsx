@@ -257,6 +257,19 @@ function Testingform() {
                             />
                         </div>
                         <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
+                            <label htmlFor="price" className='cursor-pointer font-semibold'>Price</label>
+                            <input
+                                required
+                                className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
+                                type="number"
+                                id='price'
+                                name='price'
+                                value={formData.price.remain}
+                                onChange={handleInputChange}
+                                placeholder='Price '
+                            />
+                        </div>
+                        <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                             <label htmlFor="services" className='cursor-pointer font-semibold'>Services</label>
                             <input
                                 required
