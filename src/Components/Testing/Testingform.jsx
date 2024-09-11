@@ -246,13 +246,13 @@ function Testingform() {
                             </textarea>
                         </div>
                         <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                            <label htmlFor="Paid" className='cursor-pointer font-semibold'>Paid</label>
+                            <label htmlFor="paid" className='cursor-pointer font-semibold'>Paid</label>
                             <input
                                 required
                                 className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
                                 type="number"
-                                id='Paid'
-                                name='Paid'
+                                id='paid'
+                                name='paid'
                                 value={formData.paid}
                                 onChange={handleInputChange}
                                 placeholder='Paid ballance'
