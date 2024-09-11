@@ -127,7 +127,7 @@ function Testingform() {
             <ul className='p-2 bg-gradient-to-l to-[#ddb9ce] from-[#fab3b2] w-full sm:max-w-[90vw] max-h-[90vh] overflow-y-auto my-5 rounded-lg'>
                 <div className='flex items-center justify-between px-1 pb-2'>
                     <p className='text-xs'>No. of clients: <span className='font-bold text-sm'>{navItems.length}</span></p>
-                    <p className='text-xs'>Total Paid: <span className='font-bold'>₹{totalPrice}</span></p>
+                    <p className='text-xs'> <span onClick={()=>setOpen(true)} className='cursor-pointer text-xs font-medium py-1 px-2 bg-green-400 hover:bg-green-500 rounded-lg transition-all mr-2 sm:mr-5'>Creat New</span> Total Paid: <span className='font-bold'>₹{totalPrice}</span></p>
                 </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between py-1.5 w-full border-b border-zinc-400'>
@@ -141,7 +141,7 @@ function Testingform() {
                                 </a>
                             </strong>
                             <div className='hidden sm:block size-5'>
-                                <p className='text-xs font-light'>₹{item.price}</p>
+                                <p className='text-xs font-light'>₹{item.price.paid}</p>
                             </div>
                             </div>
                         <div className='flex items-center gap-1'>
