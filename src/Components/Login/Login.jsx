@@ -1,63 +1,29 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [username, setUsername] = useState()
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const navigate = useNavigate()
 
-    const handleLogin = async (event) => {
-     event.preventDefault();
-     
-     try {
-         const response = await fetch('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', { // Your login endpoint
-             method: 'POST',
-             headers: {
-                 'Content-Type': 'application/json'
-             },
-             body: JSON.stringify({ username, password })
-         });
- 
-         const data = await response.json();
- 
-         if (response.ok) {
-             // Save the token in localStorage
-             localStorage.setItem('token', data.token);
-             alert('Login successful!');
- 
-             // Redirect to dashboard or another protected page
-             window.location.href = '/dashboard';
-         } else {
-             setError(data.message || 'Login failed');
-         }
-     } catch (error) {
-         console.error('Error:', error);
-         setError('An unexpected error occurred');
-     }
- };
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', {username, email, password})
+        .then(result => {console.log(result)
+            navigate('/')
+        })
+        .catch(err => console.log(err))
+    }
  
     return (
         <div>
             <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <div>
-                    <label>Username:</label>
-                    <input 
-                        type="text" 
-                        value={username} 
-                        onChange={(e) => setUsername(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input 
-                        type="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        required 
-                    />
-                </div>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder='username' onChange={(e) => setUsername(e.target.value)}/>
+                <input type="text" placeholder='email' onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" placeholder='password' onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit">Login</button>
             </form>
         </div>
