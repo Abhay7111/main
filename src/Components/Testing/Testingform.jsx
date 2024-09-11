@@ -131,7 +131,8 @@ function Testingform() {
                 </div>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between py-1.5 w-full border-b border-zinc-400'>
-                            <strong className='w-fit text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap'>
+                            <div className='flex items-center justify-start gap-5'>
+                            <strong className='w-fit sm:w-96 text-zinc-700 text-sm font-medium px-2 line-clamp-1 flex gap-3 items-center justify-start flex-nowrap'>
                                 <span>
                                     <a href={`/profile/${item._id}`}><img src={item.logo} alt="logo" className='w-8 max-h-8 object-cover rounded-md' /></a>
                                 </span>
@@ -139,6 +140,10 @@ function Testingform() {
                                     <span className=' w-fit line-clamp-1'>{item.domain}</span>
                                 </a>
                             </strong>
+                            <div className='hidden sm:block size-5'>
+                                <p className='text-xs font-light'>₹{item.price}</p>
+                            </div>
+                            </div>
                         <div className='flex items-center gap-1'>
                             <p title={`Last updated ${item.date}`} className='text-xs font-bold line-clamp-1 max-w-16 cursor-default text-end'>
                                 <span className='font-medium text-xs'>{item.date}</span>
