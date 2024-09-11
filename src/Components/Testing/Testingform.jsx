@@ -143,7 +143,7 @@ function Testingform() {
                                 </a>
                             </strong>
                             <div className='hidden sm:block size-5'>
-                                <p className='text-xs font-light'>₹{item.price.paid}</p>
+                                <p className='text-xs font-light'>₹{item.paid}</p>
                             </div>
                             </div>
                         <div className='flex items-center gap-1'>
