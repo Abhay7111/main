@@ -12,7 +12,7 @@ function List() {
 
        // Calculate the sum of all prices whenever navItems changes
     useEffect(() => {
-     const sum = navItems.reduce((total, item) => total + parseFloat(item.price || 0), 0);
+     const sum = navItems.reduce((total, item) => total + parseInt(item.paid || 0), 0);
      setTotalPrice(sum);
  }, [navItems]);
 
@@ -35,7 +35,7 @@ function List() {
                     <li key={item._id} className='w-[90vw] sm:w-96 h-40 sm:h-52 bg-red-200 rounded-xl p-2 flex flex-col items-center gap-1 justify-start py-2'>
                          <div className='w-full h-10 flex items-center justify-between'>
                             <NavLink to={`/profile/${item._id}`} className={`size-10 rounded-full overflow-hidden hover:scale-[1.1] transition-all`}><img src={item.logo} className='size-10 scale-[1.05] border-none outline-none rounded-full flex items-center justify-center object-cover object-center bg-[#226fef]/40' /></NavLink>
-                            <li className='text-[11px] font-medium w-fit text-green-600 flex items-center justify-center'><i class="ri-money-rupee-circle-fill text-xs"></i>{item.price}</li>
+                            <li className='text-[11px] font-medium w-fit text-green-600 flex items-center justify-center'><i class="ri-money-rupee-circle-fill text-xs"></i>{item.paid}</li>
                          </div>
                          <h1 className='w-full text-md first-letter:uppercase font-bold'>{item.name}</h1>
                          <p className='line-clamp-4 sm:line-clamp-[7]  text-xs w-full px-1.5'>{item.about}</p>

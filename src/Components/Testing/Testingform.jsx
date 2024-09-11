@@ -44,7 +44,7 @@ function Testingform() {
 
     // Calculate the sum of all prices whenever navItems changes
     useEffect(() => {
-        const sum = navItems.reduce((total, item) => total + parseInt(item.price || 0), 0);
+        const sum = navItems.reduce((total, item) => total + parseInt(item.paid || 0), 0);
         setTotalPrice(sum);
     }, [navItems]);
 
