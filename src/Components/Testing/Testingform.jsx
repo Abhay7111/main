@@ -131,6 +131,18 @@ function Testingform() {
                     <p className='text-xs'>No. of clients: <span className='font-bold text-sm'>{navItems.length}</span></p>
                     <p className='text-xs'> <span onClick={()=>setOpen(true)} className='cursor-pointer text-xs font-medium py-1 px-2 bg-green-400 hover:bg-green-500 rounded-lg transition-all mr-2 sm:mr-5'>Creat New</span> Total Paid: <span className='font-bold'>₹{totalPrice}</span></p>
                 </div>
+                   <li className='flex items-center justify-between py-1.5 w-full border-b border-zinc-400'>
+                        <div className='flex items-center justify-center gap-2 text-sm font-bold'>
+                            <p className='w-11'>Profile</p>
+                            <p className='sm:w-80'>Domain</p>
+                            <p className='w-16 text-center hidden sm:block'>Paid</p>
+                            <p className='w-16 text-center hidden sm:block'>Remain</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <p className='w-16 text-end  text-sm font-bold'>date</p>
+                            <p className='w-16 text-center  text-sm font-bold'>Buttons</p>
+                        </div>
+                   </li>
                 {navItems.map(item => (
                     <li key={item._id} className='flex items-center justify-between py-1.5 w-full border-b border-zinc-400'>
                             <div className='flex items-center justify-start gap-5'>
@@ -138,12 +150,15 @@ function Testingform() {
                                 <span>
                                     <a href={`/profile/${item._id}`}><img src={item.logo} alt="logo" className='w-8 max-h-8 object-cover rounded-md' /></a>
                                 </span>
-                                <a target='_blank' href={`https://${item.domain}`} rel="noreferrer" className='w-fit'>
+                                <a target='_blank' href={`https://${item.domain}`} rel="noreferrer" className=' sm:w-96'>
                                     <span className=' w-fit line-clamp-1'>{item.domain}</span>
                                 </a>
                             </strong>
-                            <div className='hidden sm:block size-5'>
-                                <p className='text-xs font-light'>₹{item.paid}</p>
+                            <div className='hidden sm:block w-fit'>
+                                <div className='flex items-center justify-start gap-3'>
+                                    <p className='text-xs font-medium w-16 text-green-600 line-clamp-1 overflow-hidden'>₹{item.paid}</p>
+                                    <p className='text-xs w-16 text-red-700 font-medium line-clamp-1 overflow-hidden'>₹{item.remain}</p>
+                                </div>
                             </div>
                             </div>
                         <div className='flex items-center gap-1'>
