@@ -52,7 +52,7 @@ function Profile() {
                     <NavLink to={"readme"} className={`px-3 py-1 hover:border-zinc-400 transition-all border-[1px] rounded-full text-sm font-semibold`}>Read me</NavLink>
                </div>
           </div>
-          <div>
+          <div className='w-full'>
                <Outlet/>
           </div>
      </div>
