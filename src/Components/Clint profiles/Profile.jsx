@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
 function Profile() {
+
+     const [open, setOpen] =useState(false)
      const {id} = useParams();
      const [profile, setProfile] = useState();
      const [loding, setLoading] = useState();
@@ -27,36 +29,25 @@ function Profile() {
 
 
   return (
-    <div className='w-full h-auto text-zinc-100 flex flex-col items-center justify-start sm:flex-row sm:items-start sm:justify-between px-2 sm:px-5'>
-     <div className='w-full sm:w-[70vw] py-3 flex flex-col gap-5 items-center justify-start sm:flex-row sm:items-start sm:justify-between px-2'>
-          <div className='max-w-96'>
-               <div className='w-full rounded-2xl flex items-center justify-center overflow-hidden'>
-                    <img src={profile.logo} alt="Profile image not found" className='w-full h-auto object-cover max-h-[50vh]' />
-               </div>
-               <h1 className='text-2xl mt-2 font-medium first-letter:uppercase line-clamp-1'>{profile.name}</h1>
-               <div className='w-96 p-2 flex flex-col gap-1.5'>
-                    <p className='opacity-85'>{profile.domain}</p>
-                    <a href={`mailto:${profile.email}`}>Email : {profile.email}</a>
-                    <div>
-                         <p className='font-medium'>About :</p>
-                         <p className='text-sm opacity-85 font-light tracking-wide line-clamp-4 px-4'>{profile.about}</p>
-                    </div>
-                    <p className='font-medium'>Contact : <span className='opacity-85 font-light'><a href={`tel:${profile.contact}`}>{profile.contact}</a></span></p>
-                    <div>
-                    <p className='font-medium'>Address :</p> 
-                    <p className='text-sm opacity-85 font-light tracking-wide'>{profile.address}</p>
-                    </div>
-                    <div className='flex items-center justify-start gap-2'>
-                         <a href={`https://www.youtube.com/@${profile.youtube}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-youtube-fill"></i></a>
-                         <a href={`https://www.facebook.com/${profile.facebook}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-facebook-fill"></i></a>
-                         <a href={`https://www.linkedin.com/in/${profile.linkedin}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-linkedin-fill"></i></a>
-                         <a href={`https://www.instagram.com/${profile.instagram}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-instagram-fill"></i></a>
-                         <a href={`https://api.whatsapp.com/send/?phone=${profile.contact}&text&type=phone_number&app_absent=0`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-whatsapp-fill"></i></a>
-                         <a href={`https://${profile.domain}`} target='_blank' className='size-7 bg-zinc-700 rounded-md flex items-center justify-center'><i class="ri-link-m"></i></a>
+    <div className='w-full h-auto text-zinc-800 bg-zinc-100 flex flex-col items-center justify-start sm:flex-row sm:items-start sm:justify-center px-2 sm:px-5'>
+     <div className='w-full sm:w-[70vw] py-3 flex flex-col gap-5 items-center justify-start sm:items-center sm:justify-between px-2'>
+          <div className=''>
+               <div className='w-full flex flex-col sm:flex-row items-start sm:items-center justify-center gap-10'>
+                    <img src={profile.logo} alt="Profile image not found" className='size-40 object-cover rounded-full' />
+                    <div className='flex flex-col gap-4'>
+                         <h1 className='text-2xl mt-2 font-bold first-letter:uppercase line-clamp-1'>{profile.name}</h1>
+                         <p>India</p>
+                         <div className='flex items-center justify-start gap-3 relative w-fit'>
+                              <NavLink to={"/"} className={`px-5 py-1.5 hover:border-zinc-300 transition-all border-[1px] rounded-full text-sm font-medium`}>Edit profile</NavLink> 
+                              <i onMouseEnter={()=>setOpen(true)} className="ri-more-fill cursor-pointer px-2 py-1 border hover:border-zinc-300 rounded-full relative"></i>
+                                   <div onMouseLeave={()=>setOpen(false)} className={`${open ? ' flex flex-col gap-1 top-full right-0 sm:-right-full border hover:border-zinc-300 w-40 bg-zinc-200 rounded-lg z-[99]' :'hidden'} absolute p-2`}>
+                                        <NavLink to={'/'} className={'text-xs font-normal hover:bg-zinc-300 px-2 py-1 rounded-md'}>Edit your post</NavLink>
+                                   </div>
+                         </div>
                     </div>
                </div>
           </div>
-          <div className='min-h-20 border border-zinc-600 w-full bg-zinc-800 rounded-xl p-3'>
+          <div className='min-h-20 border border-zinc-600 w-full bg-zinc-100 rounded-xl p-3'>
                <p className='text-xs opacity-80 font-extralight tracking-wide pb-3'><span className='text-sm'>/</span> {profile.name} / Readme</p>
                <div>
                     <a href={`#${profile.name}`} className='text-2xl font-semibold cursor-default'>Hey there! I'm {profile.name}</a>
