@@ -15,6 +15,10 @@ import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import List from './Components/Clint profiles/ClintList/List.jsx';
 import Dshow from './Components/Main/dshow.jsx';
 import Details from './Components/Details/Details.jsx';
+import About from './Components/Clint profiles/ProfileDetails/About.jsx';
+import Services from './Components/Clint profiles/ProfileDetails/Services.jsx';
+import Readme from './Components/Clint profiles/ProfileDetails/Readme.jsx';
+import Notfound from './Components/404/Notfound.jsx';
 // import '../src/functions/oof.js'
 
 
@@ -54,7 +58,14 @@ const routes = createBrowserRouter([
   {
     path:'profile/:id', element:<Local/>,
     children:[
-      {path:'', element:<Clintprofiles/>,}
+      {path:'', element:<Clintprofiles/>,
+        children:[
+      {path:'', element:<Services/>,},
+      {path:'about', element:<About/>,},
+      {path:'readme', element:<Readme/>,},
+      {path:'*', element:<Notfound/>,},
+        ]
+      },
     ]
   },
   {path:'login', element:<Login/>},
