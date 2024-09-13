@@ -31,8 +31,8 @@ function Profile() {
   return (
     <div className='w-full h-auto text-zinc-800 bg-zinc-100 flex flex-col items-center justify-start sm:flex-row sm:items-start sm:justify-center px-2 sm:px-5'>
      <div className='w-full sm:w-[70vw] py-3 flex flex-col gap-5 items-center justify-start sm:items-center sm:justify-between px-2'>
-          <div className='w-full flex flex-col gap-5'>
-               <div className='w-full flex flex-col sm:flex-row items-start sm:items-center justify-center gap-10'>
+          <div className='w-full flex flex-col gap-5 items-center'>
+               <div className='w-full sm:w-[35vw] rounded-xl   flex flex-col sm:flex-row items-start sm:items-start justify-start gap-10'>
                     <img src={profile.logo} alt="Profile image not found" className='size-40 object-cover rounded-full' />
                     <div className='flex flex-col gap-4'>
                          <h1 className='text-2xl mt-2 font-bold first-letter:uppercase line-clamp-1'>{profile.name}</h1>
