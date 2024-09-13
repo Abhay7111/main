@@ -25,7 +25,7 @@ const Newservice = () => {
 
     try {
       // Make POST request to your API
-      const response = await axios.post('http://localhost:3000/submitnewservice', formData);
+      const response = await axios.post('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/submitnewservice', formData);
       
       if (response.status === 200) {
         setMessage('Service added successfully!');
