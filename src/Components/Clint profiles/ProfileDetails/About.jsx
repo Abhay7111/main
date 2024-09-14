@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { a, useParams } from 'react-router-dom';
 import Loading from '../../../../public/loading.png'
 
 function About() {
@@ -32,6 +32,14 @@ function About() {
   return (
     <div>
       <p className='w-full sm:w-[70%] p-5 rounded-xl text-sm font-sans'>{aboutdata.about}</p>
+      <div className='flex items-center justify-center list-none gap-3'>
+        <a target='_blank' href={`https://github.com/${aboutdata.githubuser}`} className='text-sm font-medium hover:scale-[1.1] flex items-center gap-1 transition-all text-zinc-500 hover:text-zinc-800'><i className=" text-xl ri-github-fill"></i> Github</a>
+        <a target='_blank' href={`https://`} className='text-sm font-medium hover:scale-[1.1] flex items-center gap-1 transition-all text-zinc-500 hover:text-zinc-800'><i className=" text-xl ri-git-repository-fill"></i></a>
+        <a target='_blank' href={`https://`} className='text-sm font-medium hover:scale-[1.1] flex items-center gap-1 transition-all text-zinc-500 hover:text-zinc-800'><i className=" text-xl ri-facebook-circle-fill"></i></a>
+        <a target='_blank' href={`https://`} className='text-sm font-medium hover:scale-[1.1] flex items-center gap-1 transition-all text-zinc-500 hover:text-zinc-800'><i className=" text-xl ri-instagram-fill"></i></a>
+        <a target='_blank' href={`https://`} className='text-sm font-medium hover:scale-[1.1] flex items-center gap-1 transition-all text-zinc-500 hover:text-zinc-800'><i className=" text-xl ri-youtube-fill"></i></a>
+        <a target='_blank' href={`https://`} className='text-sm font-medium hover:scale-[1.1] flex items-center gap-1 transition-all text-zinc-500 hover:text-zinc-800'><i className=" text-xl ri-linkedin-fill"></i></a>
+      </div>
     </div>
   )
 }
