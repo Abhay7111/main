@@ -31,7 +31,7 @@ function About() {
 
   return (
     <div>
-      <p className='w-[70%] p-5 rounded-xl text-sm font-sans'>{aboutdata.about}</p>
+      <p className='w-full sm:w-[70%] p-5 rounded-xl text-sm font-sans'>{aboutdata.about}</p>
     </div>
   )
 }
