@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const Newservice = () => {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
     author: "",
-    date: "",
+    date: "", // Optional: Date can be empty as it's auto-filled server-side
   });
 
+  // Update state for form inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -17,60 +18,75 @@ const Newservice = () => {
     });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
+    e.preventDefault(); // Prevent the default form submission
+
     try {
-      const response = await axios.post("https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/submitnewservice", formData);
-      alert(response.data.message);
+      const response = await axios.post("http://localhost:5000/submitnewservice", formData);
+      // Assuming the server returns a success message on success
+      alert(response.data.message); 
     } catch (error) {
-      console.error("Error submitting the blog:", error.response.data.message);
+      console.error("Error submitting the blog:", error);
+      if (error.response && error.response.data.message) {
+        alert("Error: " + error.response.data.message); // Show error message returned from the server
+      } else {
+        alert("An error occurred. Please try again.");
+      }
     }
   };
 
-return (
-  <form onSubmit={handleSubmit}>
-    <div>
-      <label>Title:</label>
-      <input
-        type="text"
-        name="title"
-        value={formData.title}
-        onChange={handleChange}
-        required
-      />
-    </div>
-    <div>
-      <label>Content:</label>
-      <textarea
-        name="content"
-        value={formData.content}
-        onChange={handleChange}
-        required
-      ></textarea>
-    </div>
-    <div>
-      <label>Author:</label>
-      <input
-        type="text"
-        name="author"
-        value={formData.author}
-        onChange={handleChange}
-        required
-      />
-    </div>
-    <div>
-      <label>Date:</label>
-      <input
-        type="date"
-        name="date"
-        value={formData.date}
-        onChange={handleChange}
-      />
-    </div>
-    <button type="submit">Submit Blog</button>
-  </form>
-);
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="content">Content:</label>
+        <textarea
+          id="content"
+          name="content"
+          value={formData.content}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="author">Author:</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          value={formData.author}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="date">Date:</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+        />
+      </div>
+
+      <button type="submit">Submit New Service</button>
+    </form>
+  );
 };
 
 export default Newservice;
