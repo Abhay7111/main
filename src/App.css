@@ -53,3 +53,7 @@
     scale: 1;
   }
 }
+
+.transition-smooth-from-css{
+  transition: all ease-in 0.4s;
+}

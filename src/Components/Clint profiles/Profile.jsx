@@ -35,7 +35,7 @@ function Profile() {
                <div className='w-full sm:w-[35vw] rounded-xl   flex flex-col sm:flex-row items-start sm:items-start justify-start gap-10'>
                     <img src={profile.logo} alt="Profile image not found" className='size-40 object-cover rounded-full' />
                     <div className='flex flex-col gap-4'>
-                         <h1 className='text-2xl mt-2 font-bold first-letter:uppercase line-clamp-1'>{profile.name}</h1>
+                         <h1 className='text-2xl mt-2 font-bold uppercase line-clamp-1'>{profile.name}</h1>
                          <p>India</p>
                          <div className='flex items-center justify-start gap-3 relative w-fit'>
                               <NavLink to={""} className={`px-5 py-1.5 hover:border-zinc-300 transition-all border-[1px] rounded-full text-sm font-medium`}>Edit profile</NavLink> 
