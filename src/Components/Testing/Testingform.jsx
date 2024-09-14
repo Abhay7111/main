@@ -66,7 +66,11 @@ function Testingform() {
             about: '',
             paid: '',
             remain: '',
-            services: '',
+            services: [
+                {
+                    title:'',
+                }
+            ],
             contact: '',
             youtube: '',
             facebook: '',
