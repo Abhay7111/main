@@ -15,6 +15,7 @@ function Testingform() {
         remain: '',
         services: [
             {
+                service:'',
                 title:'',
             }
         ],
@@ -68,6 +69,7 @@ function Testingform() {
             remain: '',
             services: [
                 {
+                    service:'',
                     title:'',
                 }
             ],
@@ -302,7 +304,7 @@ function Testingform() {
                                 type="text"
                                 id='services'
                                 name='services'
-                                value={formData.services}
+                                value={formData.services.service}
                                 onChange={handleInputChange}
                                 placeholder='Services '
                             />
