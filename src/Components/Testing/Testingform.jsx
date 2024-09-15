@@ -309,19 +309,7 @@ function Testingform() {
                                 placeholder='Services '
                             />
                         </div>
-                        <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
-                            <label htmlFor="servicestitle" className='cursor-pointer font-semibold'>Services Title</label>
-                            <input
-                                required
-                                className='bg-transparent border-b border-zinc-600 outline-none py-1.5 px-2 placeholder:text-zinc-600 placeholder:text-sm'
-                                type="text"
-                                id='servicestitle'
-                                name='servicestitle'
-                                value={formData.services.title}
-                                onChange={handleInputChange}
-                                placeholder='Services Title'
-                            />
-                        </div>
+                        
                         <div className='bg-zinc-300/80 p-5 rounded-lg flex flex-col gap-2 w-full'>
                             <label htmlFor="contact" className='cursor-pointer font-semibold'>Contact</label>
                             <input
