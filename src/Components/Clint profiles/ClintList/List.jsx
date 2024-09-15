@@ -39,6 +39,7 @@ function List() {
                          </div>
                          <h1 className='w-full text-md first-letter:uppercase font-bold'>{item.name}</h1>
                          <p className='line-clamp-4 sm:line-clamp-[7]  text-xs w-full px-1.5'>{item.about}</p>
+<a href={`https://${item.domain}`} className='absolute bottom-2 right-2 px-2 rounded-full border hover:border-zinc-200\70'><i class="ri-external-link-fill"></i><\a>
                     </li>
                 ))} 
             </ul>
