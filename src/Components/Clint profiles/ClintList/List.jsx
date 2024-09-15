@@ -35,8 +35,10 @@ function List() {
                     <li key={item._id} className='w-[90vw] relative sm:w-96 h-40 sm:h-52 bg-red-200 rounded-xl p-2 flex flex-col items-center gap-1 justify-start py-2'>
                          <div className='w-full h-10 relative flex items-center justify-between'>
                             <NavLink to={`/profile/${item._id}`} className={`size-10 rounded-full overflow-hidden hover:scale-[1.1] transition-all`}><img src={item.logo} className='size-10 scale-[1.05] border-none outline-none rounded-full flex items-center justify-center object-cover object-center bg-[#226fef]/40' /></NavLink>
-                            <li className='text-[11px] font-medium w-fit text-green-600 flex items-center justify-center'><i class="ri-money-rupee-circle-fill text-xs"></i>{item.paid}</li>
-                            <a href={`https://${item.domain}`} className='px-2 py-1 rounded-full border hover:border-zinc-200\70'><i class="ri-external-link-fill text-xl"></i></a>
+                            <div className='flex items-center gap-3'>
+                              <li className='text-[11px] font-medium w-fit text-green-600 flex items-center justify-center'><i class="ri-money-rupee-circle-fill text-xs"></i>{item.paid}</li>
+                              <a href={`https://${item.domain}`} className='px-1 py-0.5 rounded-full border hover:border-zinc-200\70'><i class="ri-external-link-fill text-sm"></i></a>
+                            </div>
                          </div>
                          <h1 className='w-full text-md first-letter:uppercase font-bold'>{item.name}</h1>
                          <p className='line-clamp-4 sm:line-clamp-[7]  text-xs w-full px-1.5'>{item.about}</p>
