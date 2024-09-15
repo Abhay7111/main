@@ -37,11 +37,11 @@ function List() {
                             <NavLink to={`/profile/${item._id}`} className={`size-10 rounded-full overflow-hidden hover:scale-[1.1] transition-all`}><img src={item.logo} className='size-10 scale-[1.05] border-none outline-none rounded-full flex items-center justify-center object-cover object-center bg-[#226fef]/40' /></NavLink>
                             <li className='text-[11px] font-medium w-fit text-green-600 flex items-center justify-center'><i class="ri-money-rupee-circle-fill text-xs"></i>{item.paid}</li>
 
-<a href={`https://${item.domain}`} className='absolute top-2 right-10 px-2 rounded-full border hover:border-zinc-200\70'><i class="ri-external-link-fill text-xl"></i><\a>
+<a href={`https://${item.domain}`} className='absolute top-2 right-10 px-2 rounded-full border hover:border-zinc-200\70'><i class="ri-external-link-fill text-xl"></i></a>
                          </div>
                          <h1 className='w-full text-md first-letter:uppercase font-bold'>{item.name}</h1>
                          <p className='line-clamp-4 sm:line-clamp-[7]  text-xs w-full px-1.5'>{item.about}</p>
-<a href={`https://${item.domain}`} className='absolute bottom-2 right-2 px-2 rounded-full border hover:border-zinc-200\70'><i class="ri-external-link-fill"></i><\a>
+<a href={`https://${item.domain}`} className='absolute bottom-2 right-2 px-2 rounded-full border hover:border-zinc-200\70'><i class="ri-external-link-fill"></i></a>
                     </li>
                 ))} 
             </ul>
