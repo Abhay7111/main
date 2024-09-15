@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { a, useParams } from 'react-router-dom';
-// import Loading from '../../../../public/loading.png'
+import Loading from '../../../../public/loading.png'
 
 function About() {
 
