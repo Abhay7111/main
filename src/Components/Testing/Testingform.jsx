@@ -13,12 +13,7 @@ function Testingform() {
         about: '',
         paid: '',
         remain: '',
-        services: [
-            {
-                service:'',
-                title:'',
-            }
-        ],
+        services:'',
         contact: '',
         youtube: '',
         facebook: '',
