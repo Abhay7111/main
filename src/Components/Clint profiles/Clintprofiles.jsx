@@ -5,13 +5,12 @@ import Profile from './Profile'
 function Clintprofiles() {
   return (
     <div className='calc-h bg-zinc-900 flex flex-col sm:flex-row'>
-     <div>
+     <div className='w-1/4'>
           <Vnav/>
      </div>
-     <div className='w-full calc-h overflow-y-auto'>
+     <div className='w-3/4 overflow-y-auto'>
           <Profile/>
      </div>
-
     </div>
   )
 }

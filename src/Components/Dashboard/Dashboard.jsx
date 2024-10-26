@@ -15,10 +15,10 @@ const Dashboard = () => {
             return;
         }
 
-        fetch('http://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/protectedRoute', { // Replace with your actual API endpoint
+        fetch('https://engn1-v1.onrender.com/protectedRoute', { // Replace with your actual API endpoint
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + token, // Include the token in the Authorization header
+                'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
                 'Content-Type': 'application/json'
             }
         })

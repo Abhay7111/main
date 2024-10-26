@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-function Details() {
+const Details = () => {
   return (
     <Outlet/>
   )

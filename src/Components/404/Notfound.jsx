@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Notfound() {
+const Notfound = () => {
   return (
-    <div>Notfound</div>
+    <div>Not Found</div>
   )
 }
 

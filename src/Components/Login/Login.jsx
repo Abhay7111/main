@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const [username, setUsername] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
@@ -21,9 +21,9 @@ const Login = () => {
         <div>
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='username' onChange={(e) => setUsername(e.target.value)}/>
-                <input type="text" placeholder='email' onChange={(e) => setEmail(e.target.value)}/>
-                <input type="text" placeholder='password' onChange={(e) => setPassword(e.target.value)}/>
+                <input type="text" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}/>
+                <input type="text" placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit">Login</button>
             </form>
         </div>

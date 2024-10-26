@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
 import Local from './Components/Local/Local.jsx';
 import Inputs from './Components/Inputs/Inputs.jsx';
 import Home from './Components/Main/Home.jsx';
@@ -78,7 +79,7 @@ const routes = createBrowserRouter([
   { path: '*', element: <Notfound /> },
 ]);
 
-createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={routes} />
   </React.StrictMode>

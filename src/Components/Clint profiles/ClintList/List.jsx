@@ -7,7 +7,7 @@ function List() {
      const [totalPrice, setTotalPrice] = useState(0);
 
      useEffect(() => {
-          axios.get('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542')
+          axios.get('https://engn1-v1.onrender.com/getnav0132134542')
                .then(response => {
                     setNavItems(response.data);
                })

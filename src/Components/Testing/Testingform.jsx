@@ -31,7 +31,7 @@ function Testingform() {
 
     // Fetch all navigation items
     useEffect(() => {
-        axios.get('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542')
+        axios.get('https://engn1-v1.onrender.com/getnav0132134542')
             .then(response => {
                 setNavItems(response.data);
                 setLoading(false);
@@ -82,7 +82,7 @@ function Testingform() {
     };
 
     const handleCreate = () => {
-        axios.post('https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/postnav01d32q13qd45w4sf2', formData)
+        axios.post('https://engn1-v1.onrender.com/postnav01d32q13qd45w4sf2', formData)
             .then(response => {
                 setNavItems([...navItems, response.data]);
                 resetForm();
@@ -93,7 +93,7 @@ function Testingform() {
     };
 
     const handleUpdate = (id) => {
-        axios.put(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`, formData)
+        axios.put(`https://engn1-v1.onrender.com/getnav0132134542/${id}`, formData)
             .then(response => {
                 setNavItems(navItems.map(item => item._id === id ? response.data : item));
                 resetForm();
@@ -105,7 +105,7 @@ function Testingform() {
 
     const handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete this navigation item?')) {
-            axios.delete(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`)
+            axios.delete(`https://engn1-v1.onrender.com/getnav0132134542/${id}`)
                 .then(() => {
                     setNavItems(navItems.filter(item => item._id !== id));
                     alert('Navigation item deleted successfully!');

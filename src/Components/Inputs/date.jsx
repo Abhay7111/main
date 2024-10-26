@@ -4,11 +4,7 @@ function Date() {
   const [showDate, setShowDate] = useState(false);
 
   const handleRadioChange = (event) => {
-    if (event.target.value === 'yes') {
-      setShowDate(true);
-    } else {
-      setShowDate(false);
-    }
+    setShowDate(event.target.value === 'yes');
   };
 
   return (

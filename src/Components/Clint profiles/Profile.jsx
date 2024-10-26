@@ -4,29 +4,29 @@ import { NavLink, Outlet, useParams } from 'react-router-dom'
 
 function Profile() {
 
-     const [open, setOpen] =useState(false)
+     const [open, setOpen] = useState(false)
      const {id} = useParams();
-     const [profile, setProfile] = useState();
-     const [loding, setLoading] = useState();
+     const [profile, setProfile] = useState(null);
+     const [loading, setLoading] = useState(true);
 
-     useEffect(()=> {
-          axios.get(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`)
+     useEffect(() => {
+          setLoading(true);
+          axios.get(`https://engn1-v1.onrender.com/getnav0132134542/${id}`)
           .then(response => {
                setProfile(response.data);
                setLoading(false);
           })
           .catch(err => {
-               setLoading(false)
+               setLoading(false);
           })
      }, [id])
 
-     if(!profile){
+     if(loading){
           return <p>Loading... profile data</p>
      }
-     if(loding){
-          return <p>sorry Profile not found</p>
+     if(!profile){
+          return <p>Sorry, Profile not found</p>
      }
-
 
   return (
     <div className='w-full h-auto text-zinc-800 bg-zinc-100 flex flex-col items-center justify-start sm:flex-row sm:items-start sm:justify-center px-2 sm:px-5'>

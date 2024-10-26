@@ -10,12 +10,12 @@ import Dshow from './dshow.jsx'
 
 function Home() {
   return (
-     <div className='flex sm:flex-row flex-col calc-h bg-zinc-900'>
+     <div className='flex sm:flex-row flex-col bg-zinc-900'>
           <div className='min-w-20 flex flex-col items-center justify-start'>
           <Vnav/>
           </div>
           <div className='w-full h-fit overflow-y-auto sm:flex-row flex-col flex items-start justify-between px-3'>
-          <div className='sm:min-w-[63vw] w-full overflow-y-auto calc-h'>
+          <div className='sm:min-w-[63vw] w-full overflow-y-auto'>
           <Dshow/>
           </div>
           </div>

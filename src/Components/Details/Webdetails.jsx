@@ -3,18 +3,18 @@ import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function BlogDetail() {
-  const {id } = useParams(); // Get the data_ID from the route
+  const { id } = useParams(); // Get the data_ID from the route
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`https://233h32nbnmbnm54b3jkkljlkmm1hf3cvd-4-52m3.vercel.app/getnav0132134542/${id}`)
+    axios.get(`https://engn1-v1.onrender.com/getnav0132134542/${id}`)
       .then(response => {
         setBlog(response.data);
         setLoading(false);
       })
       .catch(err => {
-        console.log(err);
+        console.error(err);
         setLoading(false);
       });
   }, [id]);
@@ -34,7 +34,7 @@ function BlogDetail() {
             <NavLink to={`/profile/${blog._id}`}><img src={blog.logo} alt={`${blog.title} not uploaded an Image`} className='w-full max-h-[49vh] bg-zinc-800 rounded-md hover:scale-[1.03] sm:hover:scale-[1.01] transition-cubic cursor-pointer sm:h-auto object-cover object-center' /></NavLink>
           </div>
           <div className='w-full overflow-hidden overflow-y-auto text-zinc-100 flex flex-col gap-1'>
-               <NavLink target='_block' to={`https://${blog.domain}`} className='text-2xl uppercase pb-3 font-medium'>{blog.name}</NavLink>
+               <NavLink target='_blank' to={`https://${blog.domain}`} className='text-2xl uppercase pb-3 font-medium'>{blog.name}</NavLink>
                <p className='text-sm flex flex-nowrap font-medium gap-3'>domain: <a href={`https://${blog.domain}`} target='_blank' className='font-light break-words text-wrap '>{blog.domain}</a></p>
                <p className='text-sm flex flex-nowrap font-medium gap-3'>home: <p className='font-light break-words text-wrap '>{blog.home}</p></p>
                <p className='text-sm flex flex-nowrap font-medium gap-3'>contact: <p className='font-light break-words text-wrap '>{blog.contact}</p></p>
